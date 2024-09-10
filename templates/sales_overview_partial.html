@@ -1,0 +1,28 @@
+<h2>销售额概览</h2>
+<div class="chart-container">
+    <canvas id="salesChart"></canvas>
+</div>
+
+<script>
+    const ctx = document.getElementById('salesChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['一月', '二月', '三月', '四月', '五月', '六月'],
+            datasets: [{
+                label: '月度销售额',
+                data: [12000, 19000, 15000, 25000, 22000, 30000],
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
