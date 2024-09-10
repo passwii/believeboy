@@ -1,0 +1,81 @@
+<h2>工具箱</h2>
+<style>
+    .tool-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 20px 0;
+    }
+    .tool-item {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    .tool-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    .tool-item i {
+        font-size: 36px;
+        margin-bottom: 10px;
+        color: #1890ff;
+    }
+    .tool-item h3 {
+        margin: 0;
+        font-size: 18px;
+        color: #333;
+    }
+    .tool-item p {
+        margin: 10px 0 0;
+        font-size: 14px;
+        color: #666;
+    }
+</style>
+<div class="tool-grid">
+    <div class="tool-item" onclick="loadContent('daily_report')">
+        <i class="fas fa-calculator"></i>
+        <h3>日报</h3>
+        <p>统计每日销售数据</p>
+    </div>
+    <div class="tool-item">
+        <i class="fas fa-calendar-alt"></i>
+        <h3>日程安排</h3>
+        <p>管理您的日程和约会</p>
+    </div>
+    <div class="tool-item">
+        <i class="fas fa-tasks"></i>
+        <h3>任务列表</h3>
+        <p>创建和管理待办事项</p>
+    </div>
+    <div class="tool-item">
+        <i class="fas fa-chart-pie"></i>
+        <h3>数据分析</h3>
+        <p>分析和可视化您的数据</p>
+    </div>
+    <div class="tool-item">
+        <i class="fas fa-file-invoice-dollar"></i>
+        <h3>发票生成器</h3>
+        <p>创建专业的发票</p>
+    </div>
+    <div class="tool-item">
+        <i class="fas fa-clock"></i>
+        <h3>时间跟踪</h3>
+        <p>记录项目和任务的时间</p>
+    </div>
+    <div class="tool-item">
+        <i class="fas fa-exchange-alt"></i>
+        <h3>汇率转换</h3>
+        <p>实时货币汇率转换</p>
+    </div>
+    <div class="tool-item">
+        <i class="fas fa-sticky-note"></i>
+        <h3>便签</h3>
+        <p>快速记录想法和笔记</p>
+    </div>
+</div>
+<script>
+    // 如果需要任何JavaScript功能，可以在这里添加
+</script>
