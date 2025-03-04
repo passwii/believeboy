@@ -183,7 +183,7 @@ const ServicePage: React.FC = () => {
                 ease: "easeOut"
               }}
             >
-              杨帆出海，未来无限
+              扬帆出海，未来无限
             </motion.h4>
             <button className={styles['contact-button']}>
               联系合作

@@ -38,32 +38,30 @@ const CompetenceSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(-1);
 
   return (
-    <div className={styles.wrapper}>
-      <section className={styles.competenceSection}>
-        <div className={styles.titleGroup}>
-          <h2 className={styles.title}>核心竞争力</h2>
-          <p className={styles.subtitle}>
-            专业团队 + AI赋能 = 全方位助力您的全球业务拓展
-          </p>
-        </div>
+    <section className={styles.competenceSection}>
+      <div className={styles.titleGroup}>
+        <h2 className={styles.title}>核心竞争力</h2>
+        <p className={styles.subtitle}>
+          专业团队 + AI赋能 = 全方位助力您的全球业务拓展
+        </p>
+      </div>
 
-        <div className={styles.competenceLayout}>
-          {competencies.map((item, index) => (
-            <div
-              key={index}
-              className={`${styles.competencyCard} ${activeIndex === index ? styles.active : ''}`}
-              onClick={() => setActiveIndex(index)}
-            >
-              <div className={styles.cardContent}>
-                <div className={styles.number}>{item.number}</div>
-                <h3 className={styles.cardTitle}>{item.title}</h3>
-                <p className={styles.cardDescription}>{item.description}</p>
-              </div>
+      <div className={styles.competenceLayout}>
+        {competencies.map((item, index) => (
+          <div
+            key={index}
+            className={`${styles.competencyCard} ${activeIndex === index ? styles.active : ''}`}
+            onClick={() => setActiveIndex(index)}
+          >
+            <div className={styles.cardContent}>
+              <div className={styles.number}>{item.number}</div>
+              <h3 className={styles.cardTitle}>{item.title}</h3>
+              <p className={styles.cardDescription}>{item.description}</p>
             </div>
-          ))}
-        </div>
-      </section>
-    </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
