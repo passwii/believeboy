@@ -20,6 +20,7 @@ import PrivateRoute from './components/auth/PrivateRoute';
 import Analytics from './components/analytics/Analytics';
 import { Analytics as VercelAnalytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/react';
+import NewsDetail from './pages/news/NewsDetail';
 
 
 const AppContainer = styled.div`
@@ -121,6 +122,7 @@ function App() {
 
             {/* News routes */}
             <Route path="/news" element={<News />} />
+            <Route path="/news/:id" element={<NewsDetail />} />
           </Routes>
         </Content>
         <Footer />

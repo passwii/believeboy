@@ -179,26 +179,25 @@
 .featured-title {
   font-size: 2rem;
   margin-bottom: 30px;
-  color: #333;
+  color: white;
 }
 
 .featured-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  display: flex;
+  gap: 16px;
 }
 
 .featured-card {
   position: relative;
-  height: 400px;
+  height: 300px;
+  width: calc(50% - 8px);
   border-radius: 10px;
   overflow: hidden;
   color: white;
 }
 
 .featured-card:first-child {
-  grid-column: 1 / -1;
-  height: 500px;
+  width: calc(50% - 8px);
 }
 
 .featured-image {
@@ -235,7 +234,7 @@
 }
 
 .featured-excerpt {
-  opacity: 0.9;
+  color: white;
   margin-bottom: 15px;
 }
 

@@ -13,7 +13,7 @@ const FooterContent = styled.div`
   margin: 0 auto;
   padding: 0 20px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 0.6fr 1.2fr 1fr;
   gap: 60px;
 
   @media (max-width: 968px) {
@@ -100,7 +100,7 @@ const Footer: React.FC = () => {
           <h3>联系方式</h3>
           <CompanyName>彼励扶电子商务（苏州）有限公司</CompanyName>
           <ul>
-            <li>地址：中国(江苏)自由贸易试验区苏州片区建发微时光商业广场 356</li>
+            <li>地址：江苏省苏州市吴江区鑫蹊商务大厦A座 605 室</li>
             <li>联系电话：+86 18666468991</li>
             <li>美国电话：+1 (909) 375-0156</li>
             <li>邮箱：marketing@believeboy.com</li>

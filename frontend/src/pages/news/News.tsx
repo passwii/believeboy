@@ -2,72 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import styles from './News.module.css';
-
-interface NewsItem {
-  id: number;
-  category: string;
-  title: string;
-  excerpt: string;
-  image: string;
-  date: string;
-  featured?: boolean;
-}
+import newsData from './newsData.json';
+import { Link } from 'react-router-dom';
 
 const categories = ['全部', '公司动态', '行业资讯', '跨境洞察'];
-
-const newsData: NewsItem[] = [
-  {
-    id: 1,
-    category: '公司动态',
-    title: '彼励扶跨境荣获2025年度最具创新力企业奖',
-    excerpt: '在刚刚结束的2025年度跨境电商创新大会上，彼励扶凭借其在AI技术应用和全球化运营方面的突出表现...',
-    image: 'https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&q=80',
-    date: '2025-12-15',
-    featured: true
-  },
-  {
-    id: 2,
-    category: '行业资讯',
-    title: '2024年跨境电商行业趋势展望',
-    excerpt: '随着全球数字化转型的深入，跨境电商行业在2024年将迎来新的发展机遇...',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80',
-    date: '2024-12-10',
-    featured: true
-  },
-  {
-    id: 3,
-    category: '跨境洞察',
-    title: 'AI技术如何改变跨境电商运营模式',
-    excerpt: '人工智能技术的快速发展正在深刻改变跨境电商的运营方式，从智能选品到精准营销...',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80',
-    date: '2024-12-05',
-    featured: true
-  },
-  {
-    id: 4,
-    category: '公司动态',
-    title: '彼励扶跨境完成新一轮融资',
-    excerpt: '彼励扶跨境宣布完成新一轮融资，将进一步加强技术研发和全球市场拓展...',
-    image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80',
-    date: '2025-12-01'
-  },
-  {
-    id: 5,
-    category: '行业资讯',
-    title: '全球供应链新变化与机遇',
-    excerpt: '全球供应链格局正在发生深刻变化，为跨境电商带来新的机遇与挑战...',
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80',
-    date: '2024-11-28'
-  },
-  {
-    id: 6,
-    category: '跨境洞察',
-    title: '新兴市场跨境电商发展分析',
-    excerpt: '东南亚、拉美等新兴市场的跨境电商发展潜力巨大，市场规模持续扩大...',
-    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80',
-    date: '2024-11-25'
-  }
-];
 
 const News: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('全部');
@@ -133,12 +71,11 @@ const News: React.FC = () => {
 
       {/* Featured News */}
       <section className={styles['featured-section']}>
-        <h2 className={styles['featured-title']}>热门资讯</h2>
         <div className={styles['featured-grid']}>
-          {featuredNews.slice(0, 3).map((news, index) => (
+          {featuredNews.slice(0, 2).map((news, index) => (
             <motion.div
               key={news.id}
-              className={styles['featured-card']}
+              className={`${styles['featured-card']} ${styles['featured-card-small']}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -147,15 +84,15 @@ const News: React.FC = () => {
               <img src={news.image} alt={news.title} className={styles['featured-image']} />
               <div className={styles['featured-overlay']}>
                 <span className={styles['featured-category']}>{news.category}</span>
-                <div className={styles['featured-title']} style={{ color: '#fff' }}>
+                <div className={styles['featured-title']}>
                   <h3>{news.title}</h3>
                 </div>
                 <p className={styles['featured-excerpt']}>{news.excerpt}</p>
                 <div className={styles['news-meta']}>
                   <span>{news.date}</span>
-                  <a href="#" className={styles['read-more']}>
+                  <Link to={news.url} className={styles['read-more']}>
                     阅读更多 <ArrowRight size={16} />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -178,9 +115,9 @@ const News: React.FC = () => {
                 <p className={styles['featured-excerpt']}>{news.excerpt}</p>
                 <div className={styles['news-meta']}>
                   <span>{news.date}</span>
-                  <a href="#" className={styles['read-more']}>
+                  <Link to={news.url} className={styles['read-more']}>
                     阅读更多 <ArrowRight size={16} />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -206,9 +143,9 @@ const News: React.FC = () => {
               <p className={styles['news-excerpt']}>{news.excerpt}</p>
               <div className={styles['news-meta']}>
                 <span>{news.date}</span>
-                <a href="#" className={styles['read-more']}>
+                <Link to={news.url} className={styles['read-more']}>
                   阅读更多 <ArrowRight size={16} />
-                </a>
+                </Link>
               </div>
             </div>
           </motion.div>
