@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "category": "行业资讯",
+    "title": "2025年跨境电商行业趋势展望",
+    "excerpt": "随着全球数字化转型的深入，跨境电商行业在2024年将迎来新的发展机遇...",
+    "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80",
+    "date": "2024-12-10",
+    "url": "/news/2025-cross-border-ecommerce-trends",
+    "featured": true,
+    "content": "详细内容：2025年跨境电商行业将面临新的挑战和机遇，企业需要适应市场变化，利用新技术提升竞争力。"
+  },
+  {
+    "id": 2,
+    "category": "跨境洞察",
+    "title": "AI技术如何改变跨境电商运营模式",
+    "excerpt": "人工智能技术的快速发展正在深刻改变跨境电商的运营方式，从智能选品到精准营销...",
+    "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80",
+    "date": "2024-12-05",
+    "url": "/news/ai-impact-on-cross-border-ecommerce",
+    "featured": true,
+    "content": "详细内容：AI技术在跨境电商中的应用越来越广泛，能够帮助企业提高运营效率，优化客户体验。"
+  },
+  {
+    "id": 3,
+    "category": "行业资讯",
+    "title": "全球供应链新变化与机遇",
+    "excerpt": "全球供应链格局正在发生深刻变化，为跨境电商带来新的机遇与挑战...",
+    "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80",
+    "date": "2024-11-28",
+    "url": "/news/global-supply-chain-changes",
+    "content": "详细内容：全球供应链的变化将影响跨境电商的运营模式，企业需要及时调整策略以应对新挑战。"
+  },
+  {
+    "id": 4,
+    "category": "跨境洞察",
+    "title": "新兴市场跨境电商发展分析",
+    "excerpt": "东南亚、拉美等新兴市场的跨境电商发展潜力巨大，市场规模持续扩大...",
+    "image": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80",
+    "date": "2024-11-25",
+    "url": "/news/emerging-market-cross-border-ecommerce",
+    "content": "详细内容：新兴市场的跨境电商正在快速发展，企业应关注这些市场的机会与挑战。"
+  },
+  {
+    "id": 5,
+    "category": "行业动态",
+    "title": "工厂找错操盘手，半年血亏50万",
+    "excerpt": "最近和一个工厂老板聊天，他欲言又止的表情里藏着一肚子苦水...",
+    "image": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGNhbGxhYm9yYXRpb258ZW58MHx8fHwxNjg0MjYyNjY0&ixlib=rb-1.2.1&q=80&w=1080",
+    "date": "2025-03-05",
+    "url": "/news/factory-wrong-operator",
+    "content": "详细内容：工厂老板的经历提醒我们，选择合适的操盘手至关重要，错误的决策可能导致巨大的经济损失。"
+  }
+] 
