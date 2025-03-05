@@ -13,7 +13,7 @@ const FooterContent = styled.div`
   margin: 0 auto;
   padding: 0 20px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 0.8fr 1.2fr 1fr;
   gap: 60px;
 
   @media (max-width: 968px) {
