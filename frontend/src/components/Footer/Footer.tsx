@@ -100,7 +100,7 @@ const Footer: React.FC = () => {
           <h3>联系方式</h3>
           <CompanyName>彼励扶电子商务（苏州）有限公司</CompanyName>
           <ul>
-            <li>地址：江苏省苏州市吴江区鑫蹊商务大厦A 座605室</li>
+            <li>地址：江苏省苏州市吴江区鑫蹊商务大厦A座605室</li>
             <li>联系电话：+86 18666468991</li>
             <li>美国电话：+1 (909) 375-0156</li>
             <li>邮箱：marketing@believeboy.com</li>
