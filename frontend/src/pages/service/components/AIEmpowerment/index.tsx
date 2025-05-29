@@ -39,14 +39,14 @@ const capabilities: AICapability[] = [
 
 const stats: AIStat[] = [
   { 
-    value: 1000,
+    value: 1200,
     suffix: '+',
     label: 'SD & MidJourney',
     labelCn: '图片生成',
     delay: 0 
   },
   { 
-    value: 4,
+    value: 3,
     label: 'Local LLM',
     labelCn: '大模型部署',
     delay: 200 
@@ -59,7 +59,7 @@ const stats: AIStat[] = [
     delay: 400 
   },
   { 
-    value: 206,
+    value: 362,
     suffix: ' GB',
     label: 'Sharepoint Docs Size',
     labelCn: 'Sharepoint 项目文档',
