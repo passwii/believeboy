@@ -117,16 +117,17 @@ const CompanyName = styled.div`
   letter-spacing: 0.02em;
 `;
 
-const Copyright = styled.div`
-  text-align: center;
-  margin-top: 60px;
-  padding-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 0.9rem;
-  color: #94a3b8;
-  position: relative;
-  z-index: 2;
-`;
+// Copyright component is defined but not used
+// const Copyright = styled.div`
+//   text-align: center;
+//   margin-top: 60px;
+//   padding-top: 30px;
+//   border-top: 1px solid rgba(255, 255, 255, 0.1);
+//   font-size: 0.9rem;
+//   color: #94a3b8;
+//   position: relative;
+//   z-index: 2;
+// `;
 
 const BottomBar = styled.div`
   background: rgba(15, 23, 42, 0.5);

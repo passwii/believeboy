@@ -305,11 +305,12 @@ const AdminLink = styled(NavLink)`
   }
 `;
 
-const AdminSection = styled.div`
-  margin-left: auto;
-  min-width: 200px;
-  text-align: right;
-`;
+// AdminSection component is defined but not used
+// const AdminSection = styled.div`
+//   margin-left: auto;
+//   min-width: 200px;
+//   text-align: right;
+// `;
 
 const NavigationBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
