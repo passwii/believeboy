@@ -1,0 +1,513 @@
+{
+  "page": "服务页面",
+  "meta": {
+    "title": "服务项目 - BELIEVE",
+    "description": "彼励扶提供全方位的跨境电商服务，包括市场洞察、项目方案、产品出海和品牌出海等服务，助力企业实现全球化业务增长。"
+  },
+  "sections": [
+    {
+      "name": "HeroSection",
+      "title": "From Here, We Reach the World",
+      "image": {
+        "src": "service-hero.webp",
+        "alt": "Service Hero"
+      }
+    },
+    {
+      "name": "CrossBorderEcosystem",
+      "title": "跨境全生态",
+      "subtitle": "为您提供跨境全生态服务, 助力创造跨境品牌价值",
+      "services": [
+        {
+          "title": "市场洞察",
+          "description": "根据权威机构发布的调研报告，介绍产品全球销售情况，帮助客户了解市场大盘。深入研究目标市场的消费人群、消费习惯、竞争格局等，为产品定位和营销策略提供数据支持。基于平台分析竞争对手的产品、价格、销量、评价等，找出自身优势和改进方向。",
+          "icon": "Globe"
+        },
+        {
+          "title": "项目方案",
+          "description": "通过市场数据分析，制定合理的定价策略，以实现利润最大化。根据市场需求和竞品分析，制定差异化的产品策略，突出自身优势。根据目标市场特点和客户需求，制定全面的营销策略和推广计划，确保产品成功进入市场。",
+          "icon": "Wrench"
+        },
+        {
+          "title": "产品出海",
+          "description": "通过市场数据分析，制定合理的定价策略，以实现利润最大化。确保产品符合目标市场的法律法规、安全标准等，避免侵权和违规风险。优化供应链，选择可靠的供应商，控制成本，保证产品质量和供货稳定。制定高效的物流方案，选择合适的物流服务商，降低物流成本，提升配送时效。",
+          "icon": "Zap"
+        },
+        {
+          "title": "品牌出海",
+          "description": "根据目标市场和产品特点，制定清晰的品牌定位和价值主张。通过专业的视觉设计、营销活动等手段，提升品牌在海外市场的知名度和美誉度。利用社交媒体、搜索引擎、电子邮件营销等方式进行品牌推广，提升品牌知名度和美誉度。注册商标，监控侵权行为，维护品牌权益。",
+          "icon": "Shield"
+        }
+      ],
+      "contactSection": {
+        "title": "扬帆出海，未来无限",
+        "button": "联系合作"
+      }
+    },
+    {
+      "name": "PrimaryServices",
+      "title": "运营服务",
+      "image": {
+        "src": "service-primaryservice.avif",
+        "alt": "Primary Services"
+      },
+      "services": [
+        {
+          "id": "service-1",
+          "title": "知识产权服务",
+          "subtitles": "提供商标注册、专利申请、版权登记等",
+          "moreText": "点击更多",
+          "image": "p1.webp",
+          "details": [
+            {
+              "title": "专利权",
+              "items": [
+                "发明专利申请",
+                "实用新型专利",
+                "外观设计专利",
+                "专利检索分析"
+              ]
+            },
+            {
+              "title": "版权",
+              "items": [
+                "软件著作权登记",
+                "作品著作权登记",
+                "版权转让许可",
+                "版权保护咨询"
+              ]
+            },
+            {
+              "title": "商标权",
+              "items": [
+                "商标注册申请",
+                "商标转让许可",
+                "商标异议答辩",
+                "商标续展变更"
+              ]
+            },
+            {
+              "title": "IP战略",
+              "items": [
+                "知识产权布局",
+                "IP价值评估",
+                "侵权风险防范",
+                "维权援助服务"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "service-2",
+          "title": "项目孵化服务",
+          "subtitles": "项目评估筛选、资源整合、运营培训",
+          "moreText": "点击更多",
+          "image": "p2.webp",
+          "details": [
+            {
+              "title": "平台准备",
+              "items": [
+                "平台选择",
+                "店铺注册",
+                "店铺装修",
+                "产品上架"
+              ]
+            },
+            {
+              "title": "选品阶段",
+              "items": [
+                "市场调研",
+                "产品定位",
+                "供应链筛选",
+                "产品测试"
+              ]
+            },
+            {
+              "title": "新品阶段",
+              "items": [
+                "供应商管理",
+                "库存管理",
+                "物流管理",
+                "质量管理"
+              ]
+            },
+            {
+              "title": "运营服务",
+              "items": [
+                "数据分析",
+                "营销推广",
+                "客户服务",
+                "团队管理"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "service-3",
+          "title": "托管运营服务",
+          "subtitles": "店铺运营、营销推广数据分析、仓储物流",
+          "moreText": "点击更多",
+          "image": "p3.webp",
+          "details": [
+            {
+              "title": "市场推广与品牌建设",
+              "items": [
+                "多渠道推广策略",
+                "品牌故事打造",
+                "社交媒体运营",
+                "内容营销策划"
+              ]
+            },
+            {
+              "title": "店铺运营优化",
+              "items": [
+                "产品上架优化",
+                "定价策略制定",
+                "库存管理优化",
+                "客户服务提升"
+              ]
+            },
+            {
+              "title": "数据分析与决策",
+              "items": [
+                "销售数据分析",
+                "竞品市场分析",
+                "用户行为分析",
+                "运营策略优化"
+              ]
+            },
+            {
+              "title": "物流仓储服务",
+              "items": [
+                "仓储管理",
+                "物流配送",
+                "库存预警",
+                "退换货处理"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "service-4",
+          "title": "品牌出海服务",
+          "subtitles": "品牌策划、市场调研、营销推广",
+          "moreText": "点击更多",
+          "image": "p4.webp",
+          "details": [
+            {
+              "title": "品牌策划",
+              "items": [
+                "品牌定位",
+                "品牌故事",
+                "品牌形象设计",
+                "品牌推广策略"
+              ]
+            },
+            {
+              "title": "市场调研",
+              "items": [
+                "目标市场分析",
+                "消费者行为研究",
+                "竞争对手分析",
+                "市场趋势预测"
+              ]
+            },
+            {
+              "title": "营销推广",
+              "items": [
+                "社交媒体营销",
+                "搜索引擎优化",
+                "内容营销策划",
+                "广告投放策略"
+              ]
+            },
+            {
+              "title": "跨境支付",
+              "items": [
+                "支付通道对接",
+                "汇率风险管理",
+                "资金安全保障",
+                "跨境结算服务"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CoreTechnology",
+      "title": "核心技术",
+      "technologies": [
+        {
+          "name": "AI 智能决策",
+          "description": "集成BLF-LLM，为运营提供定价策略、库存管理、营销优化等决策支持。",
+          "icon": "Brain"
+        },
+        {
+          "name": "数据分析与挖掘",
+          "description": "对海量市场趋势、用户行为模式等数据分析，为运营决策提供更精准的数据支持。",
+          "icon": "Database"
+        },
+        {
+          "name": "搜索引擎优化",
+          "description": "优化产品标题、描述、关键词等，提升产品在搜索引擎中的排名，增加自然流量。",
+          "icon": "Search"
+        },
+        {
+          "name": "社交媒体营销",
+          "description": "利用社交媒体平台进行精准广告投放，触达目标客户群体，提升品牌知名度。",
+          "icon": "Share2"
+        },
+        {
+          "name": "内容智能创作",
+          "description": "运用AI辅助创作高质量的产品描述、营销文案和图片。",
+          "icon": "FileText"
+        },
+        {
+          "name": "智能物流系统",
+          "description": "优化物流路径规划，提高物流效率，降低物流成本。",
+          "icon": "Truck"
+        },
+        {
+          "name": "支付与结算",
+          "description": "为跨境交易提供安全、便捷的支付和结算服务。",
+          "icon": "CreditCard"
+        },
+        {
+          "name": "安全与风控",
+          "description": "BLF 账号管理体系，保护交易安全，防范账号风险。",
+          "icon": "Shield"
+        }
+      ]
+    },
+    {
+      "name": "AIEmpowerment",
+      "title": "AI 赋能",
+      "description": [
+        "我们在 AI 领域拥有丰富的实践经验，目前本地 LLM 部署有：Qwen2.5/DeepseekV3/Gemma2等模型",
+        "让运营使用工具没有门槛，让 AI 成为跨境电商的超级大脑，让跨境电商成为 AI 的最佳实践场景。"
+      ],
+      "stats": [
+        {
+          "value": 1200,
+          "suffix": "+",
+          "label": "SD & MidJourney",
+          "labelCn": "图片生成"
+        },
+        {
+          "value": 3,
+          "label": "Local LLM",
+          "labelCn": "大模型部署"
+        },
+        {
+          "value": 6,
+          "suffix": "+",
+          "label": "Text eMail Service",
+          "labelCn": "文案 客服模型服务店铺"
+        },
+        {
+          "value": 362,
+          "suffix": " GB",
+          "label": "Sharepoint Docs Size",
+          "labelCn": "Sharepoint 项目文档"
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "图片智能",
+          "description": "基于 SD 和 MidJourney",
+          "image": "ai-image.webp"
+        },
+        {
+          "title": "数据智能",
+          "description": "数据分析与智能决策支持",
+          "image": "ai-data.webp"
+        },
+        {
+          "title": "决策智能",
+          "description": "DSK智能决策系统与推荐引擎",
+          "image": "ai-decision.webp"
+        },
+        {
+          "title": "项目管理",
+          "description": "智能项目管理与资源调度",
+          "image": "ai-team.webp"
+        }
+      ]
+    },
+    {
+      "name": "ServiceCase",
+      "title": "客户案例",
+      "subtitle": "助力品牌成功出海，创造全球商业价值",
+      "image": {
+        "src": "servicecase-hero.webp",
+        "alt": "Service Cases"
+      },
+      "categories": [
+        {
+          "id": "all",
+          "label": "全部",
+          "icon": "Grid"
+        },
+        {
+          "id": "home",
+          "label": "家居用品",
+          "icon": "Home"
+        },
+        {
+          "id": "sports",
+          "label": "运动户外",
+          "icon": "Dumbbell"
+        },
+        {
+          "id": "tools",
+          "label": "工具配件",
+          "icon": "Wrench"
+        },
+        {
+          "id": "pets",
+          "label": "宠物用品",
+          "icon": "Dog"
+        },
+        {
+          "id": "kitchen",
+          "label": "厨房用品",
+          "icon": "Utensils"
+        },
+        {
+          "id": "others",
+          "label": "其他品类",
+          "icon": "Package"
+        }
+      ],
+      "cases": [
+        {
+          "id": 1,
+          "title": "工具配件品牌亚马逊突破案例",
+          "description": "针对品牌在亚马逊平台销量停滞的问题，通过全面优化产品描述、实施智能库存管理、优化广告策略等措施，帮助品牌实现显著增长",
+          "category": "工具配件",
+          "imageUrl": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=1200&h=800&auto=format&fit=crop",
+          "metrics": [
+            {
+              "label": "销售增长",
+              "value": "150%"
+            },
+            {
+              "label": "品牌搜量",
+              "value": "200%↑"
+            },
+            {
+              "label": "客户满意度",
+              "value": "95%"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "食品餐盘供应链优化案例",
+          "description": "为美国主流品牌供应商提供全方位供应链优化解决方案，通过差异化战略和供应链优化，帮助工厂实现多元化供货，达成品牌与OEM双赢",
+          "category": "家居用品",
+          "imageUrl": "https://images.unsplash.com/photo-1603199506016-b9a594b593c0?q=80&w=1200&h=800&auto=format&fit=crop",
+          "metrics": [
+            {
+              "label": "月销售额",
+              "value": "10万+"
+            },
+            {
+              "label": "毛利率",
+              "value": "25%+"
+            },
+            {
+              "label": "BSR排名",
+              "value": "TOP10"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "床垫品牌美国市场拓展案例",
+          "description": "通过深入的市场分析和全方位的营销策略，帮助床垫品牌在美国市场实现快速增长，建立品牌影响力",
+          "category": "家居用品",
+          "imageUrl": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&h=800&auto=format&fit=crop",
+          "metrics": [
+            {
+              "label": "品牌知名度",
+              "value": "200%↑"
+            },
+            {
+              "label": "月销售增长",
+              "value": "150%"
+            },
+            {
+              "label": "客户复购率",
+              "value": "30%↑"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "户外运动品牌全球布局案例",
+          "description": "帮助国内知名户外运动品牌进行全球化布局，通过多平台运营和本地化营销策略，成功打入欧美主流市场",
+          "category": "运动户外",
+          "imageUrl": "https://images.unsplash.com/photo-1526401485004-46910ecc8e51?q=80&w=1200&h=800&auto=format&fit=crop",
+          "metrics": [
+            {
+              "label": "全球市场",
+              "value": "12+"
+            },
+            {
+              "label": "年增长率",
+              "value": "180%"
+            },
+            {
+              "label": "平台评分",
+              "value": "4.8"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "title": "宠物用品品牌突破案例",
+          "description": "为宠物用品品牌提供全方位运营服务，通过精准营销和社群运营，在欧美宠物市场实现品牌突破",
+          "category": "宠物用品",
+          "imageUrl": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?q=80&w=1200&h=800&auto=format&fit=crop",
+          "metrics": [
+            {
+              "label": "销售额",
+              "value": "300万+"
+            },
+            {
+              "label": "复购率",
+              "value": "45%"
+            },
+            {
+              "label": "好评率",
+              "value": "98%"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "title": "厨房用品品牌市场拓展案例",
+          "description": "通过产品创新和精准定位，帮助厨房用品品牌在北美市场打造爆款产品，建立稳固的品牌形象",
+          "category": "厨房用品",
+          "imageUrl": "https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=1200&h=800&auto=format&fit=crop",
+          "metrics": [
+            {
+              "label": "单品销量",
+              "value": "50万+"
+            },
+            {
+              "label": "市占率",
+              "value": "15%"
+            },
+            {
+              "label": "广告ROI",
+              "value": "280%"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

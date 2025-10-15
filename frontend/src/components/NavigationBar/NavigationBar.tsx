@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import styled from 'styled-components';
 import logoImage from '../../assets/images/blf-logo.ico';
 
@@ -10,16 +10,17 @@ const Nav = styled.nav`
   top: 0;
   left: 0;
   right: 0;
-  height: var(--nav-height, 80px);
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  height: 80px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   display: flex;
   align-items: center;
   padding: 0 40px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   z-index: 1000;
   margin: 0;
+  transition: all 0.3s ease;
 
   @media (max-width: 768px) {
     padding: 0 20px;
@@ -32,11 +33,17 @@ const LogoSection = styled(Link)`
   text-decoration: none;
   color: inherit;
   margin-right: 60px;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 `;
 
 const LogoImage = styled.img`
-  height: 40px;
-  margin-right: 10px;
+  height: 44px;
+  margin-right: 12px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 `;
 
 const LogoText = styled.div`
@@ -45,29 +52,37 @@ const LogoText = styled.div`
 `;
 
 const MainText = styled.span`
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #333;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.02em;
 `;
 
 const SubText = styled.span`
-  font-size: 0.8rem;
-  color: #666;
-  font-style: bold;
+  font-size: 0.75rem;
+  color: #64748b;
+  font-weight: 500;
+  letter-spacing: 0.05em;
 `;
 
 const MenuButton = styled.button`
   display: none;
   background: none;
   border: none;
-  color: #333;
+  color: #0f172a;
   cursor: pointer;
   padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
   
   @media (max-width: 768px) {
     display: flex;
     align-items: center;
     margin-left: auto;
+  }
+  
+  &:hover {
+    background: rgba(15, 23, 42, 0.05);
   }
 `;
 
@@ -81,19 +96,19 @@ const NavList = styled.div<{ $isOpen: boolean }>`
 
   @media (max-width: 768px) {
     position: fixed;
-    top: var(--nav-height, 80px);
+    top: 80px;
     right: ${props => props.$isOpen ? '0' : '-100%'};
     bottom: 0;
     width: 100%;
-    height: calc(100vh - var(--nav-height, 80px));
+    height: calc(100vh - 80px);
     background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(16px);
     flex-direction: column;
     justify-content: flex-start;
     padding: 20px;
     gap: 0;
     transition: right 0.3s ease;
-    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
     z-index: 999;
   }
@@ -102,11 +117,11 @@ const NavList = styled.div<{ $isOpen: boolean }>`
 // 先声明一个空的 Dropdown 类型
 const Dropdown = styled.div``; // 临时声明，后面会被覆盖
 
-const NavItem = styled.div`
+const NavItem = styled.div<{ $hasDropdown?: boolean }>`
   position: relative;
   display: flex;
   align-items: center;
-  height: var(--nav-height, 80px);
+  height: 80px;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -121,6 +136,17 @@ const NavItem = styled.div`
     visibility: visible;
     transform: translateY(0);
   }
+  
+  ${props => props.$hasDropdown && `
+    svg {
+      margin-left: 4px;
+      transition: transform 0.2s ease;
+    }
+    
+    &:hover svg {
+      transform: rotate(180deg);
+    }
+  `}
 `;
 
 // 重新定义完整的 Dropdown 组件
@@ -128,18 +154,19 @@ const StyledDropdown = styled.div`
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 200px;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  min-width: 220px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 4px 25px -5px rgba(0, 0, 0, 0.1);
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
   transition: all 0.3s ease;
-  padding: 8px 0;
+  padding: 12px 0;
   z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 
   @media (max-width: 768px) {
     position: static;
@@ -164,7 +191,7 @@ const StyledDropdown = styled.div`
 Object.assign(Dropdown, StyledDropdown);
 
 const NavLink = styled(Link)<{ $isActive: boolean }>`
-  color: ${props => props.$isActive ? '#0066cc' : '#333'};
+  color: ${props => props.$isActive ? '#0f172a' : '#475569'};
   text-decoration: none;
   font-weight: ${props => props.$isActive ? '600' : '500'};
   font-size: 1rem;
@@ -172,7 +199,8 @@ const NavLink = styled(Link)<{ $isActive: boolean }>`
   height: 100%;
   display: flex;
   align-items: center;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
+  position: relative;
 
   @media (max-width: 768px) {
     height: auto;
@@ -182,19 +210,46 @@ const NavLink = styled(Link)<{ $isActive: boolean }>`
   }
 
   &:hover {
-    color: #0066cc;
+    color: #0f172a;
   }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #3b82f6;
+    transition: width 0.3s ease;
+    
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  
+  &:hover::after {
+    width: 60%;
+  }
+  
+  ${props => props.$isActive && `
+    &::after {
+      width: 60%;
+    }
+  `}
 `;
 
 const DropdownItem = styled(Link)<{ $isActive: boolean }>`
   display: block;
-  padding: 12px 20px;
-  color: ${props => props.$isActive ? '#0066cc' : '#333'};
+  padding: 12px 24px;
+  color: ${props => props.$isActive ? '#0f172a' : '#475569'};
   text-decoration: none;
-  transition: all 0.3s ease;
-  font-weight: ${props => props.$isActive ? '600' : 'normal'};
+  transition: all 0.2s ease;
+  font-weight: ${props => props.$isActive ? '600' : '500'};
   font-size: 0.95rem;
   white-space: nowrap;
+  position: relative;
 
   @media (max-width: 768px) {
     padding: 12px 24px;
@@ -202,18 +257,36 @@ const DropdownItem = styled(Link)<{ $isActive: boolean }>`
   }
 
   &:hover {
-    background: #f8f9fa;
-    color: #0066cc;
+    background: rgba(59, 130, 246, 0.05);
+    color: #0f172a;
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #3b82f6;
+    transform: scaleY(0);
+    transition: transform 0.2s ease;
+  }
+  
+  &:hover::before {
+    transform: scaleY(1);
   }
 `;
 
 const AdminLink = styled(NavLink)`
-  background: #0066cc;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   color: white !important;
-  border-radius: 4px;
-  padding: 8px 16px;
+  border-radius: 8px;
+  padding: 10px 20px;
   height: auto;
   margin-left: auto;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.1);
+  transition: all 0.2s ease;
 
   @media (max-width: 768px) {
     margin: 8px 0;
@@ -222,8 +295,13 @@ const AdminLink = styled(NavLink)`
   }
 
   &:hover {
-    background: #0052a3;
-    color: white !important;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  }
+  
+  &::after {
+    display: none;
   }
 `;
 
@@ -334,16 +412,17 @@ const NavigationBar: React.FC = () => {
           </NavLink>
         </NavItem>
 
-        <NavItem>
-          <NavLink 
-            to="/service" 
+        <NavItem $hasDropdown>
+          <NavLink
+            to="/service"
             onClick={(e) => {
               e.preventDefault();
               handleNavClick('/service');
-            }} 
+            }}
             $isActive={location.pathname === '/service'}
           >
             服务体系
+            <ChevronDown size={16} />
           </NavLink>
           <Dropdown>
             <DropdownItem 
@@ -377,12 +456,13 @@ const NavigationBar: React.FC = () => {
           </Dropdown>
         </NavItem>
 
-        <NavItem>
+        <NavItem $hasDropdown>
           <NavLink to="/about" onClick={(e) => {
             e.preventDefault();
             handleNavClick('/about');
           }} $isActive={location.pathname === '/about'}>
             关于我们
+            <ChevronDown size={16} />
           </NavLink>
           <Dropdown>
             <DropdownItem 
@@ -430,12 +510,13 @@ const NavigationBar: React.FC = () => {
           </Dropdown>
         </NavItem>
 
-        <NavItem>
+        <NavItem $hasDropdown>
           <NavLink to="/contact" onClick={(e) => {
             e.preventDefault();
             handleNavClick('/contact');
           }} $isActive={location.pathname === '/contact'}>
             联系我们
+            <ChevronDown size={16} />
           </NavLink>
           <Dropdown>
             <DropdownItem 
@@ -455,12 +536,13 @@ const NavigationBar: React.FC = () => {
           </Dropdown>
         </NavItem>
 
-        <NavItem>
+        <NavItem $hasDropdown>
           <NavLink to="/news" onClick={(e) => {
             e.preventDefault();
             handleNavClick('/news');
           }} $isActive={location.pathname === '/news'}>
             新闻资讯
+            <ChevronDown size={16} />
           </NavLink>
           <Dropdown>
             <DropdownItem 

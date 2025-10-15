@@ -1,0 +1,319 @@
+{
+  "page": "关于页面",
+  "meta": {
+    "title": "关于我们 - BELIEVE"
+  },
+  "sections": [
+    {
+      "name": "HeroSection",
+      "title": "关于我们",
+      "subtitle": "WE BELIEVE IT'S ALWAYS DAY 1",
+      "description": "跨境 当下/即未来",
+      "image": {
+        "src": "about-hero.webp",
+        "alt": "About Hero"
+      }
+    },
+    {
+      "name": "CompanyIntro",
+      "title": "公司简介",
+      "description": [
+        "彼励扶电子商务（苏州）有限公司，由一群怀揣梦想的年轻精英组成， 我们是一支充满活力与创新精神的跨境电商团队。凭借全球视野，我们深入洞察各国市场的需求脉动；依托数据驱动，我们实时监控并精准优化运营策略；凭借高效运营，我们灵活应对市场风云变幻，助力客户提升竞争力，共同开创辉煌未来。",
+        "我们秉持价值取向合作，注重长期合作关系，提供长期的深度合作方案，共同打造可持续发展的业务生态。基于Sharepoint和Notion工作流，我们构建了数字化运营体系，积累长期优势，确保每一次合作都能为客户带来持久的价值和增长。"
+      ],
+      "stats": [
+        {
+          "value": 5,
+          "label": "核心成员"
+        },
+        {
+          "value": 10,
+          "label": "Best Seller"
+        },
+        {
+          "value": 7,
+          "label": "跨境平台"
+        },
+        {
+          "value": 100,
+          "suffix": "M",
+          "label": "人均操盘业绩"
+        }
+      ],
+      "image": {
+        "src": "company-hero.webp",
+        "alt": "Company Introduction"
+      }
+    },
+    {
+      "name": "PhilosophySection",
+      "title": "公司理念",
+      "image": {
+        "src": "blf-back-love.webp",
+        "alt": "Company Philosophy"
+      },
+      "coreValues": [
+        {
+          "title": "全球视野",
+          "description": "开放视野，国际品牌",
+          "icon": "FaGlobeAmericas"
+        },
+        {
+          "title": "数据驱动",
+          "description": "数据驱动，精准优化",
+          "icon": "BiSolidData"
+        },
+        {
+          "title": "品牌使命",
+          "description": "品牌助力，构建生态",
+          "icon": "BsFlagFill"
+        },
+        {
+          "title": "AI赋能",
+          "description": "决策只能，跨境大脑",
+          "icon": "AiOutlineRobot"
+        }
+      ]
+    },
+    {
+      "name": "TeamSection",
+      "title": "团队风采",
+      "subtitle": "BELIEVE是一支充满激情、专业高效的跨境电商运营团队，汇聚了行业精英，致力于为企业开拓全球市场，实现品牌国际化。",
+      "members": [
+        {
+          "name": "苏毅 Leo",
+          "role": "商务专家",
+          "avatar": "team-rock.webp"
+        },
+        {
+          "name": "松岳 Jackie",
+          "role": "运营专家",
+          "avatar": "team-jack.webp"
+        },
+        {
+          "name": "凌志 Rock",
+          "role": "产品专家",
+          "avatar": "team-rock.webp"
+        },
+        {
+          "name": "扶苏 Buck",
+          "role": "创意专家",
+          "avatar": "team-jack.webp"
+        },
+        {
+          "name": "轻舟 Jack",
+          "role": "运营专家",
+          "avatar": "team-rock.webp"
+        }
+      ]
+    },
+    {
+      "name": "GoalsSection",
+      "title": "战略目标",
+      "image": {
+        "src": "goals-background.webp",
+        "alt": "Company Goals"
+      },
+      "goals": [
+        {
+          "title": "20家企业",
+          "description": "在未来三年内，招募20家优质跨境电商企业，打造跨境电商产业集群。"
+        },
+        {
+          "title": "10大产业",
+          "description": "重点发展十大跨境电商优势产业，打造产业集群效应。"
+        },
+        {
+          "title": "孵化超级项目",
+          "description": "在未来三年内，打造出年销售额千万美金级别的跨境电商项目。"
+        },
+        {
+          "title": "利税破亿",
+          "description": "推动跨境电商企业发展壮大，实现利税突破亿元。"
+        }
+      ]
+    },
+    {
+      "name": "PartnersSection",
+      "title": "合作伙伴",
+      "partners": [
+        {
+          "name": "拼多多",
+          "logo": "pdd.svg"
+        },
+        {
+          "name": "沃尔玛",
+          "logo": "walmart.svg"
+        },
+        {
+          "name": "Shein",
+          "logo": "shein.svg"
+        },
+        {
+          "name": "亚马逊",
+          "logo": "logo-amazon.svg"
+        },
+        {
+          "name": "中国移动",
+          "logo": "china-mobile.svg"
+        },
+        {
+          "name": "建设银行",
+          "logo": "china-construction-bank.svg"
+        },
+        {
+          "name": "Blender",
+          "logo": "blender.svg"
+        },
+        {
+          "name": "中国银行",
+          "logo": "bank-of-china.svg"
+        },
+        {
+          "name": "中石化",
+          "logo": "sinopec.svg"
+        },
+        {
+          "name": "特斯拉",
+          "logo": "tesla-pure.svg"
+        },
+        {
+          "name": "奥迪",
+          "logo": "audi.svg"
+        },
+        {
+          "name": "爱奇艺",
+          "logo": "iqiyi-logo-new.svg"
+        }
+      ],
+      "actionButton": "寻找更多伙伴",
+      "footerText": "我们期待与更多跨境服务商合作，携手创造更多可能"
+    },
+    {
+      "name": "CareersSection",
+      "title": "人才招聘",
+      "subtitle": "在跨境电商的激流勇进中，人才是我们最璀璨的瑰宝。我们倾力打造一支高效、专业、新的团队，携手共绘业务持续发展的壮丽画卷。加入我们，共创辉煌！",
+      "tableHeaders": [
+        "招聘职位",
+        "业务部门",
+        "经验要求",
+        "详情"
+      ],
+      "positions": [
+        {
+          "title": "亚马逊运营实习生",
+          "department": "运营部",
+          "experience": "毕业生",
+          "description": "请将简历发送至 [招聘邮箱]，并在邮件标题中注明\"应聘亚马逊运营实习生+姓名\"。",
+          "requirements": [
+            "本科及以上学历，专业不限，市场营销、电子商务、国际贸易等相关专业优先",
+            "英语良好，能够进行日常沟通，具备基础的书面表达能力",
+            "具备较强的责任心和团队合作精神，能够积极主动地完成任务",
+            "学习能力强，对跨境电商行业有浓厚的兴趣，愿意深入了解行业动态",
+            "熟练使用办公软件（如Excel、Word、PS、视频软件等），具备基础的数据分析能力者优先",
+            "有相关实习经验或对亚马逊平台有一定了解者优先考虑"
+          ],
+          "responsibilities": [
+            "协助运营团队进行日常listing优化，包括产品标题、描述、关键词的优化，提升产品曝光率和转化率",
+            "协助产品选品和市场调研，分析市场需求和竞争情况，协助筛选潜力产品",
+            "协助数据分析和竞品分析，整理销售数据、广告数据等，为运营决策提供支持",
+            "学习并实践跨境电商运营技能，包括库存管理、广告投放、客户服务等",
+            "协助处理客户反馈和售后服务，维护店铺评分和客户满意度"
+          ],
+          "benefits": [
+            "实习补贴：提供具有竞争力的实习薪资，表现优异者有机会获得额外奖金",
+            "实践机会：深入参与跨境电商运营的全流程，积累宝贵的实战经验",
+            "学习环境：提供系统的培训和指导，帮助你快速掌握亚马逊运营的核心技能",
+            "团队氛围：加入年轻、充满活力的团队，与行业精英共同成长",
+            "职业发展：表现优异者有机会获得转正机会，成为正式员工"
+          ]
+        },
+        {
+          "title": "亚马逊运营专员",
+          "department": "运营部",
+          "experience": "1-3年相关经验",
+          "description": "请将简历发送至 [招聘邮箱]，并在邮件标题中注明\"应聘亚马逊运营专员+姓名\"",
+          "requirements": [
+            "本科及以上学历，市场营销、电子商务、国际贸易等相关专业优先",
+            "1-3年亚马逊平台运营经验，熟悉平台规则和运营流程",
+            "英语熟练，能进行书面和口头沟通，具备良好的数据分析能力",
+            "具备较强的责任心和团队合作精神，能够独立解决问题",
+            "对跨境电商行业有深入了解，熟悉市场趋势和消费者需求"
+          ],
+          "responsibilities": [
+            "负责亚马逊店铺的日常运营管理，包括产品上架、Listing优化、广告投放等",
+            "进行市场调研和产品选品，分析竞争对手和市场趋势",
+            "监控销售数据，进行数据分析并制定优化策略，提升店铺业绩",
+            "处理客户反馈和售后服务，维护店铺评分和客户满意度",
+            "协调供应链、物流等环节，确保产品及时上架和发货"
+          ],
+          "benefits": [
+            "具有竞争力的薪资和绩效奖金",
+            "完善的培训体系和职业发展机会",
+            "年轻活力的团队氛围和良好的工作环境",
+            "跨境电商行业的深度学习和实践机会"
+          ]
+        },
+        {
+          "title": "供应链管理",
+          "department": "市场部",
+          "experience": "2年及以上",
+          "description": "请将简历发送至 [招聘邮箱]，并在邮件标题中注明\"应聘供应链管理+姓名\"。",
+          "requirements": [
+            "本科及以上学历，2年以上供应链管理经验",
+            "熟悉跨境物流和仓储管理",
+            "优秀的沟通协调能力",
+            "有跨境电商行业经验优先"
+          ],
+          "responsibilities": [
+            "制定和优化供应链策略",
+            "管理和协调供应商关系",
+            "优化库存和物流方案",
+            "降低供应链成本"
+          ],
+          "benefits": [
+            "具有竞争力的薪资和绩效奖金",
+            "完善的培训体系和职业发展机会",
+            "年轻活力的团队氛围和良好的工作环境",
+            "跨境电商行业的深度学习和实践机会"
+          ]
+        },
+        {
+          "title": "亚马逊招商经理",
+          "department": "招商部",
+          "experience": "3年以上相关经验",
+          "description": "请将简历发送至 [招聘邮箱]，并在邮件标题中注明\"应聘亚马逊招商经理+姓名\"。",
+          "requirements": [
+            "本科及以上学历，市场营销、国际贸易或相关专业",
+            "3年以上跨境电商或电商平台招商经验",
+            "熟悉亚马逊平台规则和运营模式",
+            "具备优秀的谈判能力和客户关系管理能力",
+            "英语流利，能进行商务沟通"
+          ],
+          "responsibilities": [
+            "负责亚马逊平台的招商工作，吸引优质卖家入驻",
+            "制定并执行招商策略，完成招商目标",
+            "与潜在客户沟通，解答疑问，促成合作",
+            "维护现有客户关系，提升客户满意度和忠诚度",
+            "分析市场动态和竞争对手，优化招商策略"
+          ],
+          "benefits": [
+            "具有竞争力的薪资和绩效奖金",
+            "完善的培训和职业发展机会",
+            "良好的团队氛围和晋升空间",
+            "五险一金和带薪年假"
+          ]
+        }
+      ],
+      "expandButton": {
+        "expand": "展开",
+        "collapse": "收起"
+      },
+      "detailSections": {
+        "requirements": "岗位要求：",
+        "responsibilities": "工作职责：",
+        "benefits": "福利待遇："
+      }
+    }
+  ]
+}

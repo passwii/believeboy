@@ -1,0 +1,257 @@
+{
+  "page": "管理后台",
+  "sections": [
+    {
+      "name": "LoginPage",
+      "title": "管理员登录",
+      "fields": {
+        "username": {
+          "label": "用户名",
+          "placeholder": ""
+        },
+        "password": {
+          "label": "密码",
+          "placeholder": ""
+        }
+      },
+      "button": "登录",
+      "errorMessage": "用户名或密码错误"
+    },
+    {
+      "name": "AdminDashboard",
+      "title": "管理后台",
+      "logoutButton": "退出登录",
+      "stats": [
+        {
+          "title": "总用户数",
+          "value": "1,234"
+        },
+        {
+          "title": "活跃会话",
+          "value": "156"
+        },
+        {
+          "title": "日访问量",
+          "value": "2,345"
+        },
+        {
+          "title": "销售收入",
+          "value": "$122,345"
+        }
+      ],
+      "tabs": [
+        {
+          "label": "BLF工具",
+          "value": "BLF工具"
+        },
+        {
+          "label": "数据分析",
+          "value": "数据分析"
+        },
+        {
+          "label": "数据概览",
+          "value": "数据概览",
+          "placeholder": "数据功能开发中..."
+        },
+        {
+          "label": "用户管理",
+          "value": "用户管理",
+          "placeholder": "用户管理功能开发中..."
+        }
+      ]
+    },
+    {
+      "name": "DailyReport",
+      "title": "Amazon Sales Report 日/周报",
+      "fields": {
+        "projectName": {
+          "label": "项目名称:",
+          "placeholder": ""
+        },
+        "reportDate": {
+          "label": "报表日期:",
+          "placeholder": "输入日期，月度则为2024-08"
+        },
+        "salesReport": {
+          "label": "所有订单:",
+          "accept": ".txt"
+        },
+        "adReport": {
+          "label": "广告报表:",
+          "accept": ".xlsx"
+        },
+        "fbaReport": {
+          "label": "FBA库存:",
+          "accept": ".txt"
+        }
+      },
+      "button": "生成日报",
+      "successMessage": "报告生成成功！",
+      "errorMessage": "报告生成失败，请重试。",
+      "networkErrorMessage": "提交失败，请检查网络连接。"
+    },
+    {
+      "name": "MonthlyReport",
+      "title": "Amazon Monthly Report 月报（财报）",
+      "fields": {
+        "projectName": {
+          "label": "项目名称:",
+          "placeholder": ""
+        },
+        "reportDate": {
+          "label": "报表日期:",
+          "placeholder": "请选择日期",
+          "options": "当月年份的所有月份"
+        },
+        "paymentRangeReport": {
+          "label": "付款报告:",
+          "accept": ".csv",
+          "helpLink": "?"
+        }
+      },
+      "button": "生成月报",
+      "successMessage": "月报生成成功！",
+      "errorMessage": "月报生成失败，请重试。",
+      "networkErrorMessage": "提交失败，请检查网络连接。"
+    },
+    {
+      "name": "ProductAnalysis",
+      "title": "Amazon Product Analysis 产品分析",
+      "fields": {
+        "projectName": {
+          "label": "项目名称:",
+          "placeholder": ""
+        },
+        "reportDateRange": {
+          "label": "报表日期范围:",
+          "placeholder": "至"
+        },
+        "businessReport": {
+          "label": "业务报告:",
+          "accept": ".csv"
+        },
+        "paymentReport": {
+          "label": "付款报告:",
+          "accept": ".csv",
+          "helpLink": "?"
+        },
+        "adProductReport": {
+          "label": "广告报表:",
+          "accept": ".xlsx"
+        },
+        "basicReport": {
+          "label": "基础信息表:",
+          "accept": ".csv"
+        }
+      },
+      "button": "生成产品分析",
+      "successMessage": "产品分析报告生成成功！",
+      "errorMessage": "报告生成失败，请重试。",
+      "networkErrorMessage": "提交失败，请检查网络连接。"
+    },
+    {
+      "name": "ExchangeRate",
+      "title": "全球汇率",
+      "externalLink": "中国银行外汇牌价",
+      "tables": [
+        {
+          "caption": "当月汇率",
+          "headers": ["日期", "美元", "加元", "日元", "欧元", "英镑", "墨西哥比索"]
+        },
+        {
+          "caption": "上个月汇率",
+          "headers": ["日期", "美元", "加元", "日元", "欧元", "英镑", "墨西哥比索"]
+        },
+        {
+          "caption": "前2个月汇率",
+          "headers": ["日期", "美元", "加元", "日元", "欧元", "英镑", "墨西哥比索"]
+        }
+      ]
+    },
+    {
+      "name": "FbaRevisePdf",
+      "title": "FBA标签 - 文字替换",
+      "fields": {
+        "labelPdf": {
+          "label": "FBA 标签文件",
+          "accept": ".pdf",
+          "multiple": true
+        },
+        "originalText": {
+          "label": "原始文本",
+          "type": "text"
+        },
+        "replacementText": {
+          "label": "替换文本",
+          "type": "select",
+          "options": [
+            {
+              "value": "FBA",
+              "label": "FBA"
+            },
+            {
+              "value": "",
+              "label": "空"
+            },
+            {
+              "value": "Amazon",
+              "label": "Amazon"
+            },
+            {
+              "value": "Warehouse",
+              "label": "Warehouse"
+            }
+          ]
+        }
+      },
+      "button": "处理新标签",
+      "copyright": "Copyright © 纪亚伟"
+    },
+    {
+      "name": "PaymentReportHelp",
+      "title": "支付报告下载指南",
+      "steps": [
+        {
+          "title": "进入支付报告",
+          "content": [
+            "1. 点击\"财务\"菜单",
+            "2. 选择\"支付报告\""
+          ],
+          "image": "/static/images/help/payment_menu.png",
+          "alt": "支付菜单"
+        },
+        {
+          "title": "交易明细报告",
+          "content": [
+            "1. 选择日期范围",
+            "2. 选择交易类型（收入/支出/退款等）",
+            "3. 选择支付方式（可选）",
+            "4. 点击\"导出报告\""
+          ],
+          "image": "/static/images/help/transaction_report.png",
+          "alt": "交易报告"
+        },
+        {
+          "title": "结算报告",
+          "content": [
+            "1. 切换到\"结算\"标签",
+            "2. 选择结算周期",
+            "3. 选择账户（如有多个）",
+            "4. 下载结算报告"
+          ]
+        }
+      ],
+      "notes": {
+        "title": "注意事项：",
+        "items": [
+          "交易数据通常有1-2天延迟；",
+          "结算报告每月生成一次；",
+          "可导出PDF或Excel格式；",
+          "建议定期核对交易记录；",
+          "异常交易请及时联系客服处理；",
+          "重要财务数据请妥善保存。"
+        ]
+      }
+    }
+  ]
+}

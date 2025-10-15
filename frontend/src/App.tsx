@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import NavigationBar from './components/NavigationBar/NavigationBar';
 import Footer from './components/Footer/Footer';
+import Animations from './components/Animations/Animations';
 import Home from './pages/home/Home';
 import AdminPage from './pages/admin/Admin';
 import ServicePage from './pages/service/Service';
@@ -63,69 +64,71 @@ function App() {
         <Analytics />
         <VercelAnalytics />
         <SpeedInsights />
-        <NavigationBar />
-        <Content>
-          <Routes>
-            {/* Public routes */}
-            <Route path="/" element={<Home />} />
-            <Route path="/admin/login" element={<Login />} />
-            
-            {/* Protected admin routes */}
-            <Route path="/admin" element={
-              <PrivateRoute>
-                <AdminPage />
-              </PrivateRoute>
-            } />
-            <Route path="/admin/toolset/exchange" element={
-              <PrivateRoute>
-                <ExchangeRate />
-              </PrivateRoute>
-            } />
-            <Route path="/admin/toolset/fba-revise-pdf" element={
-              <PrivateRoute>
-                <FbaRevisePdf />
-              </PrivateRoute>
-            } />
-            <Route path="/admin/dataset/daily-report" element={
-              <PrivateRoute>
-                <DailyReport />
-              </PrivateRoute>
-            } />
-            <Route path="/admin/dataset/monthly-report" element={
-              <PrivateRoute>
-                <MonthlyReport />
-              </PrivateRoute>
-            } />
-            <Route path="/admin/dataset/product-analysis" element={
-              <PrivateRoute>
-                <ProductAnalysis />
-              </PrivateRoute>
-            } />
-            <Route path="/admin/dataset/payment-report-help" element={
-              <PrivateRoute>
-                <PaymentReportHelp />
-              </PrivateRoute>
-            } />
-            
-            {/* Other public routes */}
-            <Route path="/service" element={<ServicePage />} />
-            <Route path="/about" element={<About />} />
-            
-            {/* Service routes */}
-            <Route path="/service/ai" element={<AI />} />
-            
-            {/* Contact routes */}
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/contact/consultation" element={<Consultation />} />
-            <Route path="/contact/social" element={<Social />} />
-            <Route path="/contact/careers" element={<Careers />} />
+        <Animations>
+          <NavigationBar />
+          <Content>
+            <Routes>
+              {/* Public routes */}
+              <Route path="/" element={<Home />} />
+              <Route path="/admin/login" element={<Login />} />
+              
+              {/* Protected admin routes */}
+              <Route path="/admin" element={
+                <PrivateRoute>
+                  <AdminPage />
+                </PrivateRoute>
+              } />
+              <Route path="/admin/toolset/exchange" element={
+                <PrivateRoute>
+                  <ExchangeRate />
+                </PrivateRoute>
+              } />
+              <Route path="/admin/toolset/fba-revise-pdf" element={
+                <PrivateRoute>
+                  <FbaRevisePdf />
+                </PrivateRoute>
+              } />
+              <Route path="/admin/dataset/daily-report" element={
+                <PrivateRoute>
+                  <DailyReport />
+                </PrivateRoute>
+              } />
+              <Route path="/admin/dataset/monthly-report" element={
+                <PrivateRoute>
+                  <MonthlyReport />
+                </PrivateRoute>
+              } />
+              <Route path="/admin/dataset/product-analysis" element={
+                <PrivateRoute>
+                  <ProductAnalysis />
+                </PrivateRoute>
+              } />
+              <Route path="/admin/dataset/payment-report-help" element={
+                <PrivateRoute>
+                  <PaymentReportHelp />
+                </PrivateRoute>
+              } />
+              
+              {/* Other public routes */}
+              <Route path="/service" element={<ServicePage />} />
+              <Route path="/about" element={<About />} />
+              
+              {/* Service routes */}
+              <Route path="/service/ai" element={<AI />} />
+              
+              {/* Contact routes */}
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/contact/consultation" element={<Consultation />} />
+              <Route path="/contact/social" element={<Social />} />
+              <Route path="/contact/careers" element={<Careers />} />
 
-            {/* News routes */}
-            <Route path="/news" element={<News />} />
-            <Route path="/news/:id" element={<NewsDetail />} />
-          </Routes>
-        </Content>
-        <Footer />
+              {/* News routes */}
+              <Route path="/news" element={<News />} />
+              <Route path="/news/:id" element={<NewsDetail />} />
+            </Routes>
+          </Content>
+          <Footer />
+        </Animations>
       </AppContainer>
     </Router>
   );

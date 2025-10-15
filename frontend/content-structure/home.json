@@ -1,0 +1,222 @@
+{
+  "page": "首页",
+  "meta": {
+    "title": "彼励扶 - 跨境电商解决方案",
+    "description": "彼励扶致力于为跨境电商企业提供一站式智能营销解决方案，通过AI技术赋能，助力企业实现全球化业务增长。"
+  },
+  "sections": [
+    {
+      "name": "HeroSection",
+      "title": "跨境电商解决方案",
+      "description": "彼励扶致力于为跨境电商企业提供一站式智能营销解决方案，通过AI技术赋能，助力企业实现全球化业务增长。",
+      "ctaButton": "立即咨询",
+      "image": {
+        "src": "cross-board.webp",
+        "alt": "Cross Board Commerce"
+      }
+    },
+    {
+      "name": "ServicesSection",
+      "title": "跨境优服",
+      "subtitle": "彼励扶拥有全行业顶尖运营人才，优秀的技术团队，全流程数据管理制度",
+      "services": [
+        {
+          "title": "市场调研",
+          "description": "深入分析目标市场，制定精准营销策略",
+          "color": "blue"
+        },
+        {
+          "title": "产品优化",
+          "description": "优化产品展示，提升转化率",
+          "color": "green"
+        },
+        {
+          "title": "品牌建设",
+          "description": "打造独特品牌形象，提升品牌价值",
+          "color": "red"
+        },
+        {
+          "title": "AI赋能",
+          "description": "利用AI技术优化运营效率",
+          "color": "orange"
+        }
+      ],
+      "operationServices": [
+        "A9算法", "螺旋打法", "定价促销", "站外推广", "产品认证", "客户联系", 
+        "运营工具", "财务报表", "库存管理", "新品探测", "Review 管理", "Facebook 群组",
+        "店铺安全", "客诉处理", "VAT税法", "Listing合规", "爆款选品", "折扣优惠",
+        "旺季销售", "绩效考核", "FBA 手册", "AGL 操作", "ACOS 优化", "产品核算分析",
+        "项目核算", "全年销售规划"
+      ]
+    },
+    {
+      "name": "CompetenceSection",
+      "title": "核心竞争力",
+      "subtitle": "专业团队 + AI赋能 = 全方位助力您的全球业务拓展",
+      "competencies": [
+        {
+          "number": "01",
+          "title": "定制化出海方案",
+          "description": "根据企业的业需求和市场特点，制定个性化的跨境电商战略和实施方案。"
+        },
+        {
+          "number": "02",
+          "title": "跨境全生态服务",
+          "description": "提供从产品选择、营销策略到物流配送的全方位支持，助力企业跨境电商成功。"
+        },
+        {
+          "number": "03",
+          "title": "去中心化运营",
+          "description": "采用灵活的运营模式，提高决策效率和市场响应速度，实现快速适应市场变化。"
+        },
+        {
+          "number": "04",
+          "title": "AI 赋能全流程",
+          "description": "利用人工智能技术全面优化运营流程，提高效率和精准度，实现智能化管理。"
+        },
+        {
+          "number": "05",
+          "title": "价值取向合作",
+          "description": "注重长期合作关系，提供长期的深度合作方案，共同打造可持续发展的业务生态。"
+        },
+        {
+          "number": "06",
+          "title": "数字化运营资产",
+          "description": "基于Sharepoint和Notion工作流，构建数字化运营体系，积累长期优势。"
+        }
+      ]
+    },
+    {
+      "name": "CompanyIntro",
+      "title": "公司简介",
+      "description": [
+        "彼励扶电子商务（苏州）有限公司，由一群怀揣梦想的年轻精英组成， 我们是一支充满活力与创新精神的跨境电商团队。凭借全球视野，我们深入洞察各国市场的需求脉动；依托数据驱动，我们实时监控并精准优化运营策略；凭借高效运营，我们灵活应对市场风云变幻，助力客户提升竞争力，共同开创辉煌未来。",
+        "我们秉持价值取向合作，注重长期合作关系，提供长期的深度合作方案，共同打造可持续发展的业务生态。基于Sharepoint和Notion工作流，我们构建了数字化运营体系，积累长期优势，确保每一次合作都能为客户带来持久的价值和增长。"
+      ],
+      "stats": [
+        {
+          "value": 5,
+          "label": "核心成员"
+        },
+        {
+          "value": 10,
+          "label": "Best Seller"
+        },
+        {
+          "value": 7,
+          "label": "跨境平台"
+        },
+        {
+          "value": 100,
+          "suffix": "M",
+          "label": "人均操盘业绩"
+        }
+      ],
+      "image": {
+        "src": "company-hero.webp",
+        "alt": "Company Introduction"
+      }
+    },
+    {
+      "name": "AIEmpowerment",
+      "title": "AI 赋能",
+      "description": [
+        "我们在 AI 领域拥有丰富的实践经验，目前本地 LLM 部署有：Qwen2.5/DeepseekV3/Gemma2等模型",
+        "让运营使用工具没有门槛，让 AI 成为跨境电商的超级大脑，让跨境电商成为 AI 的最佳实践场景。"
+      ],
+      "stats": [
+        {
+          "value": 1200,
+          "suffix": "+",
+          "label": "SD & MidJourney",
+          "labelCn": "图片生成"
+        },
+        {
+          "value": 3,
+          "label": "Local LLM",
+          "labelCn": "大模型部署"
+        },
+        {
+          "value": 6,
+          "suffix": "+",
+          "label": "Text eMail Service",
+          "labelCn": "文案 客服模型服务店铺"
+        },
+        {
+          "value": 362,
+          "suffix": " GB",
+          "label": "Sharepoint Docs Size",
+          "labelCn": "Sharepoint 项目文档"
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "图片智能",
+          "description": "基于 SD 和 MidJourney",
+          "image": "ai-image.webp"
+        },
+        {
+          "title": "数据智能",
+          "description": "数据分析与智能决策支持",
+          "image": "ai-data.webp"
+        },
+        {
+          "title": "决策智能",
+          "description": "DSK智能决策系统与推荐引擎",
+          "image": "ai-decision.webp"
+        },
+        {
+          "title": "项目管理",
+          "description": "智能项目管理与资源调度",
+          "image": "ai-team.webp"
+        }
+      ]
+    },
+    {
+      "name": "ServiceCasesSection",
+      "title": "服务案例",
+      "subtitle": "我们用专业和创新，助力客户实现业务增长",
+      "cases": [
+        {
+          "title": "Drill Bit",
+          "overview": "某工具配件品牌面临亚马逊平台销量停滞、品牌知名度低的问题。",
+          "process": [
+            "对品牌现有产品线进行全面评估，优化产品描述和图片。",
+            "实施智能库存管理系统，提高库存周转率，降低仓储成本。",
+            "定针对性的广告策略，优化关键词和投放时间。",
+            "与知名KOL合作，开展多场线上直播和产品体验活动。",
+            "优化亚马逊店铺，提高搜索排名和转化率。"
+          ],
+          "result": "经过6个月的运营，销售额同比增长150%，品牌搜量提升200%，客户满意度达到95%。",
+          "image": "drill.webp"
+        },
+        {
+          "title": "Glass Pan",
+          "overview": "某知名工厂为美国主流品牌和线下商超供应食品餐盘，面临严重的成本压缩问题。",
+          "process": [
+            "组建专业团队，深入分析工厂现有供应链和产品结构。",
+            "制定差异化战略，针对工厂供货的品牌竞品进行详细调查分析。",
+            "从物流环节着手，优化现有供应链节点，显著降低运营成本。",
+            "重新设计产品包装和营销策略，提升产品在线上平台的竞争力。",
+            "利用数据分析，精准定位目标客户群，优化广告投放策略。"
+          ],
+          "result": "半年内进入BSR TOP10，月销售额突破10万美元，毛利率超25%。工厂实现多元供货，稳定成本，达成品牌与OEM双赢。",
+          "image": "glass.webp"
+        },
+        {
+          "title": "Mattress",
+          "overview": "某家居床垫品牌希望在美国市场扩大影响力，提高销售额。",
+          "process": [
+            "深入分析目标市场，制定针对性的品牌定位和营销策略。",
+            "优化产品线，开发符合美国消费者需求的新产品。",
+            "全面提升社交媒体运营，包括Facebook、Instagram和TikTok。",
+            "与知名KOL合作，开展多场线上直播和产品体验活动。",
+            "优化亚马逊店铺，提高搜索排名和转化率。"
+          ],
+          "result": "经过8个月运营，品牌知名度提升200%，客户复购率增长30%，月均销售额增长150%。",
+          "image": "mattress.webp"
+        }
+      ]
+    }
+  ]
+}
