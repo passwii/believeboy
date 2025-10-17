@@ -2,9 +2,9 @@ import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
-    <div className="container-custom">
+    <div className="w-full">
       <Hero />
-      <div className="section-padding pt-32">
+      <div className="container-custom section-padding pt-32">
         <h1 className="text-4xl md:text-6xl font-bold text-center mb-8">
           欢迎来到 <span className="text-gradient">Believe Boy</span>
         </h1>

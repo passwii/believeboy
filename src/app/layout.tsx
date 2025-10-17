@@ -7,6 +7,7 @@ import zhCN from 'antd/locale/zh_CN'
 import { theme } from '@/antd-theme'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import { ThemeProvider } from '@/contexts/ThemeContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,20 +27,22 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="zh-CN">
+    <html lang="zh-CN" suppressHydrationWarning>
       <body className={inter.className}>
-        <AntdRegistry>
-          <ConfigProvider
-            locale={zhCN}
-            theme={theme}
-          >
-            <Header />
-            <main className="min-h-screen">
-              {children}
-            </main>
-            <Footer />
-          </ConfigProvider>
-        </AntdRegistry>
+        <ThemeProvider>
+          <AntdRegistry>
+            <ConfigProvider
+              locale={zhCN}
+              theme={theme}
+            >
+              <Header />
+              <main className="min-h-screen">
+                {children}
+              </main>
+              <Footer />
+            </ConfigProvider>
+          </AntdRegistry>
+        </ThemeProvider>
       </body>
     </html>
   )

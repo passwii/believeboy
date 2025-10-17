@@ -7,6 +7,7 @@ import { Button, Drawer, Menu } from 'antd'
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons'
 import { NAV_ITEMS, SITE_CONFIG } from '@/lib/constants'
 import { BaseComponentProps } from '@/lib/types'
+import ThemeToggle from '@/components/ui/ThemeToggle'
 
 export default function Header({ className = '' }: BaseComponentProps) {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -31,10 +32,10 @@ export default function Header({ className = '' }: BaseComponentProps) {
   }
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/90 backdrop-blur-md shadow-sm py-2' 
+        isScrolled
+          ? 'bg-white/90 dark:bg-secondary-900/90 backdrop-blur-md shadow-sm py-2'
           : 'bg-transparent py-4'
       } ${className}`}
     >
@@ -59,13 +60,18 @@ export default function Header({ className = '' }: BaseComponentProps) {
                 className={`font-medium transition-colors duration-200 hover:text-primary-600 ${
                   pathname === item.href
                     ? 'text-primary-600'
-                    : 'text-secondary-700'
+                    : 'text-secondary-700 dark:text-secondary-300'
                 }`}
               >
                 {item.label}
               </Link>
             ))}
           </nav>
+
+          {/* Theme Toggle Button */}
+          <div className="hidden md:block">
+            <ThemeToggle />
+          </div>
 
           {/* CTA Button */}
           <div className="hidden md:block">
@@ -109,10 +115,10 @@ export default function Header({ className = '' }: BaseComponentProps) {
             <Link
               key={item.id}
               href={item.href}
-              className={`text-lg font-medium py-2 px-4 rounded-lg transition-colors duration-200 hover:bg-primary-50 hover:text-primary-600 ${
+              className={`text-lg font-medium py-2 px-4 rounded-lg transition-colors duration-200 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 ${
                 pathname === item.href
-                  ? 'bg-primary-50 text-primary-600'
-                  : 'text-secondary-700'
+                  ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-600'
+                  : 'text-secondary-700 dark:text-secondary-300'
               }`}
               onClick={handleCloseMobileMenu}
             >
@@ -120,7 +126,11 @@ export default function Header({ className = '' }: BaseComponentProps) {
             </Link>
           ))}
           
-          <div className="pt-4 mt-4 border-t border-secondary-200">
+          <div className="pt-4 mt-4 border-t border-secondary-200 dark:border-secondary-700">
+            <div className="flex items-center justify-between py-2 px-4">
+              <span className="text-secondary-700 dark:text-secondary-300 font-medium">主题模式</span>
+              <ThemeToggle />
+            </div>
             <Link href="/contact" onClick={handleCloseMobileMenu}>
               <Button
                 type="primary"

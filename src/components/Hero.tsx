@@ -6,8 +6,8 @@ import { Globe } from "@/components/Globe";
 
 export default function Hero() {
   return (
-    <section className="relative w-full mx-auto overflow-hidden rounded-3xl bg-muted border border-gray-200 dark:border-gray-800 shadow-md px-6 py-16 md:px-16 md:py-24 mt-48">
-      <div className="flex flex-col-reverse items-center justify-between gap-10 md:flex-row">
+    <section className="relative w-full overflow-hidden bg-muted border-x border-gray-200 dark:border-gray-800 shadow-md px-6 py-16 md:px-16 md:py-24 mt-48">
+      <div className="container-custom mx-auto flex flex-col-reverse items-center justify-between gap-10 md:flex-row">
         <div className="z-10 max-w-xl text-left">
           <h1 className="text-3xl font-normal text-gray-900 dark:text-white">
             Build with <span className="text-primary">Believe Boy</span>{" "}
@@ -17,8 +17,8 @@ export default function Hero() {
             Join Today <ArrowRight className="h-4 w-4" />
           </Button>
         </div>
-        <div className="relative h-[180px] w-full max-w-xl">
-          <Globe className="absolute -bottom-20 -right-40 scale-150" />
+        <div className="relative h-[240px] w-full max-w-xl md:h-[300px] lg:h-[360px]">
+          <Globe className="absolute -bottom-20 -right-20 md:-bottom-20 md:-right-40 scale-125 md:scale-150" />
         </div>
       </div>
     </section>
