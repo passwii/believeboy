@@ -3,7 +3,6 @@ import {
   Check,
   Sparkles,
   Building2,
-  Briefcase,
   Target,
   Zap,
   Bot,
@@ -38,84 +37,70 @@ export const metadata: Metadata = {
   description: "彼励扶提供灵活的跨境电商服务定价方案，透明的价格，灵活的合作模式，满足不同规模企业的需求。",
 };
 
-// 四种合作模式数据
+// 三种合作模式数据
 const pricingPlans = [
   {
-    id: "basic",
+    id: "pro",
     icon: Building2,
-    title: "基础服务套餐",
-    subtitle: "刚起步卖家",
-    priceRange: "¥8,000 - ¥25,000",
+    title: "Pro 方案",
+    subtitle: "专业起步计划",
+    priceRange: "¥4,000 - ¥6,000",
     priceUnit: "/月",
-    description: "适合刚起步的卖家，或需要标准化服务的客户",
+    description: "适合月销售额0-5W美金的中小卖家，刚起步或处于运营瓶颈期",
     features: [
-      "市场调研与竞品分析",
-      "Listing优化（15-100个SKU）",
-      "基础广告管理与投放",
-      "周报数据分析",
-      "工作时间客服支持",
+      "亚马逊 + 沃尔玛双平台运营",
+      "店铺诊断与6-12月运营路线图",
+      "每月筛选2-4款潜力产品",
+      "PPC广告全托管（SP、SB、SD）",
+      "FBA/WFS库存实时预警与补货计划",
+      "每周数据周报 + 每月复盘教学",
+      "1对1专属运营经理，工作日9:00-21:00支持",
     ],
-    extraInfo: "基础版¥8,000/月 → 旗舰版¥25,000/月",
+    extraInfo: "单平台¥4,000/月 · 双平台¥6,000/月 · 最低6个月",
     color: "blue",
     featured: false,
   },
   {
-    id: "performance",
+    id: "max",
     icon: TrendingUp,
-    title: "业绩分成模式",
-    subtitle: "追求快速增长的客户",
-    priceRange: "¥5,000/月 + 提成",
-    priceUnit: "",
-    description: "适合已有一定基础，追求快速增长的客户",
+    title: "Max 方案",
+    subtitle: "新手企业全托管起步计划",
+    priceRange: "¥88,000 - ¥128,000",
+    priceUnit: "/年",
+    description: "适合首次涉足跨境电商的企业，无亚马逊、沃尔玛平台运营经验，无内部专业运营团队",
     features: [
-      "全链路运营服务",
-      "风险共担，利益共享",
-      "月度增长策略制定",
-      "每周数据复盘与优化",
-      "专属运营团队支持",
-      "销售额提成5%-12%",
+      "亚马逊北美站 + 沃尔玛美国站双平台全包",
+      "全流程入驻代办及品牌备案指导",
+      "每月4-6个潜力产品筛选及Listing全优化",
+      "双平台广告全托管（目标ACoS≤30%）",
+      "FBA/WFS库存预警及补货计划",
+      "每周数据周报 + 每月深度复盘会",
+      "1对1专属运营经理，工作日9:00-21:00支持",
     ],
-    extraInfo: "最低合作期6个月",
+    extraInfo: "标准价¥128,000/年 · 经济价¥88,000/年 · 最低12个月 · 业绩提成阶梯7%-13%",
     color: "cyan",
     featured: true,
     badge: "推荐",
   },
   {
-    id: "project",
-    icon: Briefcase,
-    title: "项目制服务",
-    subtitle: "特定需求客户",
-    priceRange: "按项目收费",
-    priceUnit: "",
-    description: "适合有特定需求，不需要长期全托管的客户",
-    features: [
-      "单次Listing优化（¥3,000/SKU起）",
-      "广告账户搭建与优化",
-      "品牌建设方案",
-      "竞品分析报告",
-      "专项诊断与培训指导",
-    ],
-    extraInfo: "3项以上服务享9折优惠",
-    color: "indigo",
-    featured: false,
-  },
-  {
-    id: "strategic",
+    id: "ultra",
     icon: Target,
-    title: "战略合伙人模式",
-    subtitle: "年销百万美元以上品牌",
-    priceRange: "定制化洽谈",
-    priceUnit: "",
-    description: "适合年销百万美元以上，寻求深度战略合作的品牌方",
+    title: "Ultra 方案",
+    subtitle: "老卖家增长托管计划",
+    priceRange: "¥10,000 - ¥15,000",
+    priceUnit: "/月",
+    description: "适合已有稳定跨境运营基础的老卖家，月销3-15万+美金，面临业绩瓶颈或团队离职断层问题",
     features: [
-      "深度绑定，长期规划",
-      "全渠道运营（亚马逊+独立站）",
-      "供应链与物流优化",
-      "团队搭建与培训",
-      "年度业绩对赌协议",
-      "股权激励（可选）",
+      "亚马逊 + 沃尔玛双平台深度全托管",
+      "深度诊断与12-24个月长期增长战略",
+      "每月8-15个潜力爆款挖掘与系列化布局",
+      "广告全域操盘（目标ACoS≤22%）+ 品牌内容营销",
+      "FBA多仓布局优化，规避2026涨费及超龄罚款",
+      "24小时专业客服外包 + 差评拦截（目标评分≥4.6）",
+      "AI数据仪表盘 + 季度运营workshop知识转移",
+      "离职应急专项：48小时内无缝接管运营",
     ],
-    extraInfo: "基础费+业绩提成+股权激励",
+    extraInfo: "主推价¥12,800/月 · 最低12个月 · 压2付1模式 · 业绩提成阶梯3.5%-5%",
     color: "violet",
     featured: false,
   },
@@ -171,12 +156,12 @@ const faqItems = [
     answer: "我们的合作流程分为五个步骤：1) 需求诊断 - 深入了解您的业务现状和目标；2) 策略制定 - 基于诊断结果制定个性化方案；3) 签约启动 - 确认合作细节并签署合同；4) 执行落地 - 专业团队按计划执行运营工作；5) 持续优化 - 定期复盘数据并调整策略。整个流程公开透明，确保双方目标一致。",
   },
   {
-    question: "业绩分成模式如何计算？",
-    answer: "业绩分成模式采用\"基础服务费+销售额提成\"的结构。基础服务费¥5,000/月用于覆盖团队基础成本。销售额提成按阶梯计算：$0-$50,000收5%，$50,001-$100,000收8%，$100,001-$200,000收10%，$200,001以上收12%封顶。我们仅对增量部分收取提成，保护您的存量业绩利益。",
+    question: "Max 方案业绩分成模式如何计算？",
+    answer: "Max 方案采用\"基础服务费+销售额提成\"的结构。基础服务费用于覆盖团队基础成本。销售额提成按阶梯计算，我们仅对增量部分收取提成，保护您的存量业绩利益。具体提成比例请咨询我们的顾问。",
   },
   {
     question: "是否提供试用？",
-    answer: "我们提供免费的初步诊断咨询（价值¥3,000），帮助您了解当前业务状况和优化空间。对于业绩分成模式，我们设置3个月的磨合期，期间可根据效果调整合作方式。虽然我们不提供完全免费的试用，但我们的最低合作门槛较低，可以让您以较小成本体验我们的服务质量。",
+    answer: "我们提供免费的初步诊断咨询（价值¥3,000），帮助您了解当前业务状况和优化空间。对于 Pro 方案，我们设置3个月的磨合期，期间可根据效果调整合作方式。虽然我们不提供完全免费的试用，但我们的最低合作门槛较低，可以让您以较小成本体验我们的服务质量。",
   },
   {
     question: "如何保障数据安全？",
@@ -184,7 +169,7 @@ const faqItems = [
   },
   {
     question: "合同周期是多久？",
-    answer: "不同模式的合同周期不同：基础服务套餐采用月付制，可随时调整或终止（需提前30天通知）；业绩分成模式最低合作期6个月，前期需要投入建立基础；项目制服务按单个项目签约，通常2-4周完成；战略合伙人模式采用年度框架协议，具体条款可商议。我们支持合作满3个月后根据实际情况调整方案。",
+    answer: "不同模式的合同周期不同：Pro 方案最低合作期6个月，采用压2付1模式；Max 方案最低合作期6个月，前期需要投入建立基础；Ultra 方案采用年度框架协议，具体条款可商议。我们支持合作满3个月后根据实际情况调整方案。",
   },
 ];
 
@@ -192,22 +177,17 @@ const faqItems = [
 const selectionGuide = [
   {
     stage: "刚起步，预算有限",
-    recommendation: "基础服务套餐 - 基础版",
+    recommendation: "Pro 方案 - 单平台版",
     icon: Building2,
   },
   {
     stage: "有一定基础，追求增长",
-    recommendation: "业绩分成模式",
+    recommendation: "Max 方案",
     icon: TrendingUp,
   },
   {
-    stage: "只需要特定服务",
-    recommendation: "项目制服务",
-    icon: Briefcase,
-  },
-  {
     stage: "成熟品牌，寻求战略伙伴",
-    recommendation: "战略合伙人模式",
+    recommendation: "Ultra 方案",
     icon: Target,
   },
 ];
@@ -280,7 +260,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* 四种合作模式 Section */}
+      {/* 三种合作模式 Section */}
       <section id="pricing-plans" className="py-20 md:py-24 bg-slate-50">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <FadeIn>
@@ -289,7 +269,7 @@ export default function PricingPage() {
                 服务方案
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                四种合作模式
+                三种合作模式
               </h2>
               <p className="text-lg text-slate-600">
                 灵活的定价模式，匹配不同阶段的出海需求
@@ -297,7 +277,7 @@ export default function PricingPage() {
             </div>
           </FadeIn>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8" staggerDelay={0.1}>
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8" staggerDelay={0.1}>
             {pricingPlans.map((plan, index) => (
               <StaggerItem key={plan.id}>
                 <Card 
@@ -329,7 +309,7 @@ export default function PricingPage() {
                     </CardDescription>
                   </CardHeader>
 
-                  <CardContent className="space-y-4">
+                  <CardContent className="flex flex-col h-full space-y-4">
                     {/* 价格 */}
                     <div className="pb-4 border-b border-slate-100">
                       <div className="text-2xl md:text-3xl font-bold text-slate-900">
@@ -340,7 +320,7 @@ export default function PricingPage() {
                     </div>
 
                     {/* 功能列表 */}
-                    <ul className="space-y-3">
+                    <ul className="space-y-3 flex-1">
                       {plan.features.map((feature, fIndex) => (
                         <li key={fIndex} className="flex items-start gap-2">
                           <Check className={`w-4 h-4 text-${plan.color}-500 mt-0.5 shrink-0`} />
@@ -350,10 +330,10 @@ export default function PricingPage() {
                     </ul>
 
                     {/* CTA按钮 */}
-                    <Button 
-                      className={`w-full mt-4 ${
-                        plan.featured 
-                          ? 'bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white' 
+                    <Button
+                      className={`w-full mt-auto ${
+                        plan.featured
+                          ? 'bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white'
                           : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                       }`}
                       asChild
@@ -385,7 +365,7 @@ export default function PricingPage() {
             </div>
           </FadeIn>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" staggerDelay={0.1}>
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-4" staggerDelay={0.1}>
             {selectionGuide.map((guide, index) => (
               <StaggerItem key={index}>
                 <div className="bg-slate-50 rounded-xl p-6 hover:bg-blue-50 transition-colors duration-300 group">
