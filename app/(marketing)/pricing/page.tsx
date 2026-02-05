@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import {
-  Check,
   Sparkles,
   Building2,
   Target,
@@ -15,7 +14,6 @@ import {
   MessageSquare,
   BarChart3,
   HelpCircle,
-  ChevronRight,
   Star
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -30,6 +28,9 @@ import {
 import { FadeIn, FadeInContainer, FadeInItem } from "@/components/effects/fade-in";
 import { SlideUp, StaggerContainer, StaggerItem } from "@/components/effects/slide-up";
 import { CTASection } from "@/components/sections/shared/cta-section";
+import { XPackageSection } from "./sections/x-package-section";
+import { PricingCard } from "./components/pricing-card";
+import type { PricingPlan } from "./data/pricing-plans";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -38,10 +39,10 @@ export const metadata: Metadata = {
 };
 
 // 三种合作模式数据
-const pricingPlans = [
+const pricingPlans: PricingPlan[] = [
   {
     id: "pro",
-    icon: Building2,
+    icon: "building",
     title: "Pro 方案",
     subtitle: "专业起步计划",
     priceRange: "¥4,000 - ¥6,000",
@@ -62,7 +63,7 @@ const pricingPlans = [
   },
   {
     id: "max",
-    icon: TrendingUp,
+    icon: "trending",
     title: "Max 方案",
     subtitle: "新手企业全托管起步计划",
     priceRange: "¥88,000 - ¥128,000",
@@ -84,7 +85,7 @@ const pricingPlans = [
   },
   {
     id: "ultra",
-    icon: Target,
+    icon: "target",
     title: "Ultra 方案",
     subtitle: "老卖家增长托管计划",
     priceRange: "¥10,000 - ¥15,000",
@@ -173,22 +174,27 @@ const faqItems = [
   },
 ];
 
-// 选择建议
+// Icon map for selection guide
+const selectionIconMap = {
+  building: Building2,
+  trending: TrendingUp,
+  target: Target,
+};
 const selectionGuide = [
   {
     stage: "刚起步，预算有限",
     recommendation: "Pro 方案 - 单平台版",
-    icon: Building2,
+    icon: "building",
   },
   {
     stage: "有一定基础，追求增长",
     recommendation: "Max 方案",
-    icon: TrendingUp,
+    icon: "trending",
   },
   {
     stage: "成熟品牌，寻求战略伙伴",
     recommendation: "Ultra 方案",
-    icon: Target,
+    icon: "target",
   },
 ];
 
@@ -278,79 +284,19 @@ export default function PricingPage() {
           </FadeIn>
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8" staggerDelay={0.1}>
-            {pricingPlans.map((plan, index) => (
+            {pricingPlans.map((plan) => (
               <StaggerItem key={plan.id}>
-                <Card 
-                  className={`h-full relative overflow-hidden transition-all duration-300 group ${
-                    plan.featured 
-                      ? 'border-2 border-cyan-500 shadow-xl hover:shadow-2xl scale-[1.02]' 
-                      : 'border-slate-200 hover:border-blue-300 hover:shadow-xl'
-                  }`}
-                >
-                  {/* 推荐标签 */}
-                  {plan.featured && (
-                    <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-center py-2 text-sm font-semibold">
-                      <div className="flex items-center justify-center gap-1">
-                        <Star className="w-4 h-4 fill-current" />
-                        {plan.badge}
-                      </div>
-                    </div>
-                  )}
-
-                  <CardHeader className={`${plan.featured ? 'pt-12' : 'pt-6'}`}>
-                    <div className={`w-12 h-12 rounded-xl bg-${plan.color}-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                      <plan.icon className={`w-6 h-6 text-${plan.color}-600`} />
-                    </div>
-                    <CardTitle className="text-xl font-bold text-slate-900">
-                      {plan.title}
-                    </CardTitle>
-                    <CardDescription className="text-sm text-slate-500">
-                      {plan.subtitle}
-                    </CardDescription>
-                  </CardHeader>
-
-                  <CardContent className="flex flex-col h-full space-y-4">
-                    {/* 价格 */}
-                    <div className="pb-4 border-b border-slate-100">
-                      <div className="text-2xl md:text-3xl font-bold text-slate-900">
-                        {plan.priceRange}
-                        {plan.priceUnit && <span className="text-base font-normal text-slate-500">{plan.priceUnit}</span>}
-                      </div>
-                      <p className="text-xs text-slate-500 mt-1">{plan.extraInfo}</p>
-                    </div>
-
-                    {/* 功能列表 */}
-                    <ul className="space-y-3 flex-1">
-                      {plan.features.map((feature, fIndex) => (
-                        <li key={fIndex} className="flex items-start gap-2">
-                          <Check className={`w-4 h-4 text-${plan.color}-500 mt-0.5 shrink-0`} />
-                          <span className="text-sm text-slate-600">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    {/* CTA按钮 */}
-                    <Button
-                      className={`w-full mt-auto ${
-                        plan.featured
-                          ? 'bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white'
-                          : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-                      }`}
-                      asChild
-                    >
-                      <Link href="/contact">
-                        了解详情
-                        <ChevronRight className="w-4 h-4 ml-1" />
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
+                <PricingCard {...plan} />
               </StaggerItem>
             ))}
           </StaggerContainer>
         </div>
       </section>
+      
 
+      {/* X 套餐 Section */}
+      <XPackageSection />
+      
       {/* 选择建议 Section */}
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
@@ -366,19 +312,22 @@ export default function PricingPage() {
           </FadeIn>
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-4" staggerDelay={0.1}>
-            {selectionGuide.map((guide, index) => (
-              <StaggerItem key={index}>
-                <div className="bg-slate-50 rounded-xl p-6 hover:bg-blue-50 transition-colors duration-300 group">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
-                      <guide.icon className="w-5 h-5 text-blue-600" />
+            {selectionGuide.map((guide, index) => {
+              const GuideIcon = selectionIconMap[guide.icon as keyof typeof selectionIconMap];
+              return (
+                <StaggerItem key={index}>
+                  <div className="bg-slate-50 rounded-xl p-6 hover:bg-blue-50 transition-colors duration-300 group">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
+                        <GuideIcon className="w-5 h-5 text-blue-600" />
+                      </div>
+                      <span className="text-sm text-slate-500">{guide.stage}</span>
                     </div>
-                    <span className="text-sm text-slate-500">{guide.stage}</span>
+                    <p className="font-semibold text-slate-900">{guide.recommendation}</p>
                   </div>
-                  <p className="font-semibold text-slate-900">{guide.recommendation}</p>
-                </div>
-              </StaggerItem>
-            ))}
+                </StaggerItem>
+              );
+            })}
           </StaggerContainer>
         </div>
       </section>
