@@ -1,8 +1,8 @@
 "use client";
 
-import { pricingPlans } from "../data/pricing-plans";
-import { PricingCard } from "../components/pricing-card";
-import { SectionHeader } from "../components/section-header";
+import { pricingPlans } from "@/app/(marketing)/pricing/modules/pricing-plans/data";
+import { PricingCard } from "@/app/(marketing)/pricing/modules/pricing-plans/components/pricing-card";
+import { SectionHeader } from "@/app/(marketing)/pricing/shared/components/section-header";
 import { FadeIn } from "@/components/effects/fade-in";
 import { StaggerContainer, StaggerItem } from "@/components/effects/slide-up";
 
@@ -12,7 +12,7 @@ export function PricingPlansSection() {
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <FadeIn>
           <SectionHeader
-            title="三种合作模式"
+            title="合作模式"
             subtitle="灵活的定价模式，匹配不同阶段的出海需求"
             badge={{ text: "服务方案" }}
             className="mb-16"

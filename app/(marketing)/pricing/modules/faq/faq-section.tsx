@@ -1,8 +1,8 @@
 "use client";
 
 import { HelpCircle } from "lucide-react";
-import { faqItems } from "../data/faq-items";
-import { SectionHeader } from "../components/section-header";
+import { faqItems } from "@/app/(marketing)/pricing/modules/faq/data";
+import { SectionHeader } from "../../shared/components/section-header";
 import {
   Accordion,
   AccordionContent,
@@ -37,9 +37,9 @@ export function FAQSection() {
                   value={`item-${index}`}
                   className="border-b border-slate-100 last:border-b-0"
                 >
-                  <AccordionTrigger className="px-6 py-5 hover:bg-slate-50 text-left text-slate-900 font-semibold hover:no-underline">
+                  <AccordionTrigger className="px-6 py-5 hover:bg-slate-50 text-left text-slate-900 font:semibold hover:no-underline">
                     <div className="flex items-center gap-3">
-                      <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-bold shrink-0">
+                      <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font: bold shrink-0">
                         {index + 1}
                       </span>
                       <span>{item.question}</span>

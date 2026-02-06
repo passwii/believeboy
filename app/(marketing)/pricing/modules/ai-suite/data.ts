@@ -13,7 +13,7 @@ export interface AIPlan {
 export const aiPlans: AIPlan[] = [
   {
     name: "AI-Suite 基础版",
-    price: "¥2,000",
+    price: "¥2,000.00",
     unit: "/月",
     description: "适合初创卖家，自动化基础运营工作",
     features: [
@@ -25,7 +25,7 @@ export const aiPlans: AIPlan[] = [
   },
   {
     name: "AI-Suite 专业版",
-    price: "¥5,000",
+    price: "¥5,000.00",
     unit: "/月",
     description: "适合成长型卖家，全方位AI赋能",
     features: [

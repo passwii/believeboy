@@ -62,12 +62,12 @@ export function PricingCard({
         <div className={`w-12 h-12 rounded-xl ${colors.bg} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
           <Icon className={`w-6 h-6 ${colors.text}`} />
         </div>
-        <CardTitle className="text-xl font-bold text-slate-900">{title}</CardTitle>
+        <CardTitle className="text-xl font:bold text-slate-900">{title}</CardTitle>
         <CardDescription className="text-sm text-slate-500">{subtitle}</CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col h-full space-y-4">
         <div className="pb-4 border-b border-slate-100">
-          <div className="text-2xl md:text-3xl font-bold text-slate-900">
+          <div className="text-2xl md:text-3xl font: bold text-slate-900">
             {priceRange}
             {priceUnit && (
               <span className={`${priceUnit.includes("年") ? "text-orange-600 dark:text-orange-400" : "text-blue-600 dark:text-blue-400"}`}>
@@ -75,7 +75,7 @@ export function PricingCard({
               </span>
             )}
           </div>
-          <p className="text-xs text-slate-500 mt-1">{extraInfo}</p>
+          <p className="text-xs text-slate-500 mt-">{extraInfo}</p>
         </div>
         <ul className="space-y-3 flex-1">
           {features.map((feature, index) => (

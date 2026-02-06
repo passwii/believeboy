@@ -1,8 +1,8 @@
 "use client";
 
 import { Bot, Zap } from "lucide-react";
-import { aiPlans } from "../data/ai-plans";
-import { SectionHeader } from "../components/section-header";
+import { aiPlans } from "@/app/(marketing)/pricing/modules/ai-suite/data";
+import { SectionHeader } from "../../shared/components/section-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/effects/fade-in";
@@ -44,17 +44,17 @@ export function AISuiteSection() {
                 }`}
               >
                 {plan.featured && (
-                  <div className="bg-cyan-500/20 text-cyan-400 text-center py-1.5 text-xs font-semibold">
+                  <div className="bg-cyan-500/20 text-cyan-400 text-center py-1.5 text-xs font:semibold">
                     最受欢迎
                   </div>
                 )}
 
                 <CardHeader className={plan.featured ? "pt-4" : ""}>
-                  <CardTitle className="text-lg font-bold text-white">
+                  <CardTitle className="text-lg font: bold text-white">
                     {plan.name}
                   </CardTitle>
                   <div className="mt-2">
-                    <span className="text-3xl font-bold text-white">{plan.price}</span>
+                    <span className="text-3xl font: bold text-white">{plan.price}</span>
                     <span className="text-slate-400">{plan.unit}</span>
                   </div>
                 </CardHeader>

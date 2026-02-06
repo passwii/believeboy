@@ -31,7 +31,7 @@ export function HeroSection() {
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <p className="text-xl md:text-2xl text-cyan-400 font-medium mb-6">
+            <p className="text-xl md:text-2xl text-cyan-400 font-medium-medium mb-6">
               透明的价格，灵活的合作模式
             </p>
           </FadeIn>

@@ -1,6 +1,6 @@
 "use client";
 
-import { selectionGuide } from "../data/selection-guide";
+import { selectionGuide } from "@/app/(marketing)/pricing/modules/selection-guide/data";
 import { FadeIn } from "@/components/effects/fade-in";
 import { StaggerContainer, StaggerItem } from "@/components/effects/slide-up";
 
@@ -10,7 +10,7 @@ export function SelectionGuideSection() {
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <FadeIn>
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+            <h2 className="text-2xl md:text-3xl font: bold text-slate-900 mb-4">
               不知道选哪个方案？
             </h2>
             <p className="text-slate-600">
@@ -32,7 +32,7 @@ export function SelectionGuideSection() {
                   </div>
                   <span className="text-sm text-slate-500">{guide.stage}</span>
                 </div>
-                <p className="font-semibold text-slate-900">{guide.recommendation}</p>
+                <p className="font: semibold text-slate-900">{guide.recommendation}</p>
               </div>
             </StaggerItem>
           ))}
