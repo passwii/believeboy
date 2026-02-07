@@ -201,6 +201,27 @@
   50% { opacity: 0.8; }
 }
 
+/* 边框流光动画 */
+@keyframes borderFlowX {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(calc(100% + 80px)); }
+}
+
+@keyframes borderFlowXReverse {
+  0% { transform: translateX(calc(100% + 80px)); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes borderFlowY {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(calc(100% + 80px)); }
+}
+
+@keyframes borderFlowYReverse {
+  0% { transform: translateY(calc(100% + 80px)); }
+  100% { transform: translateY(-100%); }
+}
+
 /* 滚动条样式 */
 ::-webkit-scrollbar {
   width: 8px;

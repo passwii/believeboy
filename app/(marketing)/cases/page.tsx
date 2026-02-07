@@ -483,11 +483,13 @@ export default function CasesPage() {
 
       {/* 案例展示区 */}
       {cases.map((caseData, index) => (
-        <CaseSection key={caseData.id} caseData={caseData} index={index} />
+        <section key={caseData.id} id={`case-0${index + 1}`}>
+          <CaseSection caseData={caseData} index={index} />
+        </section>
       ))}
 
       {/* 客户评价 Section */}
-      <section className="py-20 md:py-24 bg-slate-900 relative overflow-hidden">
+      <section id="testimonials" className="py-20 md:py-24 bg-slate-900 relative overflow-hidden">
         {/* 背景装饰 */}
         <div className="absolute inset-0">
           <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-3xl" />

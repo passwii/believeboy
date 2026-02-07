@@ -13,7 +13,7 @@ import { FadeIn } from "@/components/effects/fade-in";
 
 export function FAQSection() {
   return (
-    <section className="py-20 md:py-24 bg-slate-50">
+    <section id="faq" className="py-32 md:py-40 bg-slate-50">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <FadeIn>
           <SectionHeader

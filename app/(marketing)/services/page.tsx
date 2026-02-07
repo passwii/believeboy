@@ -234,7 +234,7 @@ export default function ServicesPage() {
       </section>
 
       {/* 核心优势 Section */}
-      <section className="py-20 md:py-24 bg-slate-50">
+      <section id="advantages" className="py-20 md:py-24 bg-slate-50">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -330,7 +330,7 @@ export default function ServicesPage() {
       </section>
 
       {/* 运营服务细分能力 Section */}
-      <section className="py-20 md:py-24 bg-slate-50">
+      <section id="capabilities" className="py-20 md:py-24 bg-slate-50">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -362,7 +362,7 @@ export default function ServicesPage() {
       </section>
 
       {/* 服务流程 Section */}
-      <section className="py-20 md:py-24 bg-white">
+      <section id="process" className="py-20 md:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center max-w-3xl mx-auto mb-16">

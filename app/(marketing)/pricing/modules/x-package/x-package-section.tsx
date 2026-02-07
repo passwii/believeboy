@@ -43,6 +43,7 @@ export function XPackageSection() {
 
   return (
     <section
+      id="x-package"
       ref={sectionRef}
       className="relative py-24 md:py-32 overflow-hidden"
       style={{ backgroundColor: "#020617" }}
@@ -131,9 +132,28 @@ export function XPackageSection() {
           {/* 战略投资级服务定价卡片 */}
           <motion.div 
             variants={itemVariants}
-            className="mt-10 max-w-lg mx-auto"
+            className="mt-10 max-w-4xl mx-auto"
           >
-            <div className="relative p-6 md:p-8 rounded-2xl bg-gradient-to-br from-amber-500/10 via-amber-500/5 to-transparent border border-amber-500/20 backdrop-blur-xl overflow-hidden group hover:border-amber-500/40 transition-all duration-500">
+            <div className="relative p-8 md:p-12 rounded-3xl bg-gradient-to-br from-amber-500/10 via-amber-500/5 to-transparent border border-amber-500/20 backdrop-blur-xl overflow-hidden group hover:border-amber-500/40 transition-all duration-500">
+              {/* 边框流光动画 - 四个角的光点 */}
+              <div className="absolute inset-0 rounded-3xl pointer-events-none">
+                {/* 上边框光点 */}
+                <div className="absolute top-0 left-0 w-full h-[2px] overflow-hidden">
+                  <div className="w-20 h-full bg-gradient-to-r from-transparent via-amber-400 to-transparent animate-[borderFlowX_3s_linear_infinite]" />
+                </div>
+                {/* 右边框光点 */}
+                <div className="absolute top-0 right-0 w-[2px] h-full overflow-hidden">
+                  <div className="w-full h-20 bg-gradient-to-b from-transparent via-amber-400 to-transparent animate-[borderFlowY_3s_linear_infinite]" style={{ animationDelay: '0.75s' }} />
+                </div>
+                {/* 下边框光点 */}
+                <div className="absolute bottom-0 left-0 w-full h-[2px] overflow-hidden">
+                  <div className="w-20 h-full bg-gradient-to-l from-transparent via-amber-400 to-transparent animate-[borderFlowXReverse_3s_linear_infinite]" style={{ animationDelay: '1.5s' }} />
+                </div>
+                {/* 左边框光点 */}
+                <div className="absolute top-0 left-0 w-[2px] h-full overflow-hidden">
+                  <div className="w-full h-20 bg-gradient-to-t from-transparent via-amber-400 to-transparent animate-[borderFlowYReverse_3s_linear_infinite]" style={{ animationDelay: '2.25s' }} />
+                </div>
+              </div>
               {/* 光效背景 */}
               <div 
                 className="absolute -top-1/2 -right-1/2 w-full h-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"
@@ -143,35 +163,35 @@ export function XPackageSection() {
               />
               
               {/* 标签 */}
-              <div className="relative flex items-center justify-center gap-2 mb-5">
+              <div className="relative flex items-center justify-center gap-3 mb-6">
                 <Badge 
-                  className="px-4 py-1.5 text-sm bg-amber-500/20 text-amber-400 border border-amber-500/30 hover:bg-amber-500/30 transition-colors"
+                  className="px-5 py-2 text-base bg-amber-500/20 text-amber-400 border border-amber-500/30 hover:bg-amber-500/30 transition-colors"
                 >
-                  <Star className="w-3.5 h-3.5 mr-1.5 fill-amber-400" />
+                  <Star className="w-4 h-4 mr-2 fill-amber-400" />
                   战略投资级服务
                 </Badge>
               </div>
               
               {/* 价格 */}
-              <div className="relative text-center mb-5">
-                <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-2xl md:text-3xl font-bold text-slate-400">¥</span>
-                  <span className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 bg-clip-text text-transparent">
+              <div className="relative text-center mb-6">
+                <div className="flex items-baseline justify-center gap-2">
+                  <span className="text-3xl md:text-4xl font-bold text-slate-400">¥</span>
+                  <span className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 bg-clip-text text-transparent">
                     258,000
                   </span>
-                  <span className="text-lg md:text-xl text-slate-400">/年</span>
+                  <span className="text-xl md:text-2xl text-slate-400">/年</span>
                 </div>
               </div>
               
               {/* 分隔线 */}
-              <div className="relative w-24 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent mx-auto mb-5" />
+              <div className="relative w-32 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent mx-auto mb-6" />
               
               {/* 合作条款 */}
-              <div className="relative text-center space-y-1 mb-6">
-                <p className="text-slate-300 text-sm">
+              <div className="relative text-center space-y-2 mb-8">
+                <p className="text-slate-300 text-base">
                   最低合作期 <span className="text-amber-400 font-semibold">18个月</span>
                 </p>
-                <p className="text-slate-400 text-xs">
+                <p className="text-slate-400 text-sm">
                   净利润 <span className="text-amber-400">25-35%</span> 分成 · 仅限 <span className="text-amber-400">2-5席/年</span>
                 </p>
               </div>
@@ -180,11 +200,11 @@ export function XPackageSection() {
               <Button
                 size="lg"
                 asChild
-                className="relative w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-white font-semibold py-5 text-sm shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/30 transition-all duration-300 group/btn"
+                className="relative w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-white font-semibold py-6 text-base shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/30 transition-all duration-300 group/btn"
               >
                 <Link href="/contact">
                   立即预约战略咨询
-                  <ArrowRight className="w-4 h-4 ml-1.5 group-hover/btn:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                 </Link>
               </Button>
             </div>

@@ -316,7 +316,7 @@ export default function AIEmpowermentPage() {
       </section>
 
       {/* AI愿景 Section */}
-      <section className="py-20 md:py-24 bg-slate-50">
+      <section id="vision" className="py-20 md:py-24 bg-slate-50">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn>
@@ -545,7 +545,7 @@ export default function AIEmpowermentPage() {
       </section>
 
       {/* 实战应用场景 Section */}
-      <section className="py-20 md:py-24 bg-slate-50">
+      <section id="scenarios" className="py-20 md:py-24 bg-slate-50">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center max-w-3xl mx-auto mb-16">
