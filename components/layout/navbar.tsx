@@ -158,9 +158,10 @@ function NavLink({
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      {/* 触发器 */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
+      {/* 触发器 - 使用 Link 支持点击跳转 */}
+      <Link
+        href={item.href}
+        onClick={closeDropdown}
         className={`flex items-center px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-md hover:bg-white/10 group ${
           isOpen
             ? scrolled
@@ -184,7 +185,7 @@ function NavLink({
             scrolled ? "bg-blue-600" : "bg-cyan-400"
           }`}
         />
-      </button>
+      </Link>
 
       {/* 下拉菜单 */}
       <AnimatePresence>
