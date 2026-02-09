@@ -9,7 +9,7 @@ export const platforms: Platform[] = [
   { name: "独立站", nameEn: "DTC", color: "#6366f1" },
   { name: "eBay", nameEn: "eBay", color: "#E53238" },
   { name: "Walmart", nameEn: "Walmart", color: "#0071CE" },
-  { name: "TikTok Shop", nameEn: "TikTok", color: "#000000" },
+  { name: "TikTok", nameEn: "TikTok", color: "#000000" },
   { name: "Shopee", nameEn: "Shopee", color: "#EE4D2D" },
   { name: "Lazada", nameEn: "Lazada", color: "#0F156D" },
 ];
