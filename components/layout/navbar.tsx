@@ -271,6 +271,11 @@ export function Navbar() {
       <div className="container mx-auto flex h-16 md:h-[72px] items-center justify-between px-4 md:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 group">
+          <img
+            src="/be-logo.ico"
+            alt="彼励扶 Logo"
+            className="w-8 h-8 md:w-9 md:h-9 transition-transform duration-300 group-hover:scale-105"
+          />
           <motion.span
             className={`text-xl md:text-2xl font-bold transition-colors duration-300 ${
               scrolled ? "text-slate-900" : "text-white"
@@ -279,13 +284,6 @@ export function Navbar() {
           >
             彼励扶
           </motion.span>
-          <span
-            className={`text-xs md:text-sm font-medium transition-colors duration-300 hidden sm:inline ${
-              scrolled ? "text-slate-500" : "text-white/70"
-            }`}
-          >
-            BelieveBoy
-          </span>
         </Link>
 
         {/* Desktop Navigation */}
