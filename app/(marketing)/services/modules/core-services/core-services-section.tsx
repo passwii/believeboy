@@ -1,12 +1,12 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { Badge } from "@/components/ui/badge";
+import { useState, useRef } from "react";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { coreServices, type CoreService } from "./data";
 
-// 颜色配置
+const serviceCount = coreServices.length;
+
 const colorVariants: Record<string, { 
   bg: string; 
   text: string; 
@@ -44,12 +44,7 @@ const colorVariants: Record<string, {
   },
 };
 
-// 服务场景组件
-function ServiceScene({ 
-  service, 
-  index, 
-  isActive
-}: { 
+function ServiceScene({ service, index, isActive }: { 
   service: CoreService; 
   index: number;
   isActive: boolean;
@@ -58,86 +53,63 @@ function ServiceScene({
   const Icon = service.icon;
   const SecondaryIcon = service.secondaryIcon;
 
+  // 只显示当前和相邻页面，其他隐藏
+  const shouldRender = Math.abs(index - (isActive ? index : -1)) <= 1;
+  
+  if (!shouldRender && !isActive) {
+    return <div className="w-screen h-screen flex-shrink-0" />;
+  }
+
   return (
     <div className="relative w-screen h-screen flex-shrink-0 flex items-center justify-center overflow-hidden">
-      {/* 背景渐变 */}
       <div className={cn(
-        "absolute inset-0 bg-gradient-to-br opacity-30 transition-opacity duration-1000",
+        "absolute inset-0 bg-gradient-to-br opacity-30",
         colors.gradient,
         isActive ? "opacity-30" : "opacity-0"
       )} />
       
-      {/* 网格背景 */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:100px_100px]" />
 
-      {/* 主要内容容器 */}
       <div className="relative z-10 max-w-7xl mx-auto px-8 grid grid-cols-2 gap-16 items-center">
-        
-        {/* 左侧：图标区域 */}
-        <motion.div 
+        <div 
           className="relative flex items-center justify-center"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ 
-            opacity: isActive ? 1 : 0.3, 
-            scale: isActive ? 1 : 0.8,
-            x: isActive ? 0 : -50
+          style={{
+            opacity: isActive ? 1 : 0,
+            transform: isActive ? 'scale(1) translateX(0)' : 'scale(0.8) translateX(-50px)',
+            transition: isActive ? 'opacity 0.3s ease-out, transform 0.3s ease-out' : 'none'
           }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          {/* 发光背景 */}
           <div className={cn(
-            "absolute w-[400px] h-[400px] rounded-full blur-3xl transition-opacity duration-700",
+            "absolute w-[400px] h-[400px] rounded-full blur-3xl",
             colors.bg,
             isActive ? "opacity-60" : "opacity-0"
           )} />
           
-          {/* 主图标 */}
           <div className="relative">
-            <motion.div
-              animate={{ 
-                y: isActive ? [0, -10, 0] : 0,
-                rotate: isActive ? [0, 5, 0] : 0
-              }}
-              transition={{ 
-                y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-                rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" }
-              }}
-            >
-              <Icon className={cn(
-                "w-48 h-48 transition-all duration-700",
-                colors.text,
-                isActive ? "drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]" : ""
-              )} strokeWidth={1} />
-            </motion.div>
+            <Icon className={cn(
+              "w-48 h-48",
+              colors.text
+            )} strokeWidth={1} />
             
-            {/* 副图标 */}
-            <motion.div
+            <div
               className={cn(
                 "absolute -bottom-4 -right-4 w-20 h-20 rounded-2xl flex items-center justify-center",
                 "bg-white/10 backdrop-blur-xl border border-white/20",
                 colors.glow
               )}
-              animate={{
-                y: isActive ? [0, -5, 0] : 0,
-                scale: isActive ? [1, 1.05, 1] : 1
-              }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >
               <SecondaryIcon className={cn("w-10 h-10", colors.text)} />
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
 
-        {/* 右侧：文字内容 */}
         <div className="space-y-8">
-          {/* 序号 */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ 
+          <div
+            style={{
               opacity: isActive ? 1 : 0,
-              x: isActive ? 0 : 50
+              transform: isActive ? 'translateX(0)' : 'translateX(50px)',
+              transition: isActive ? 'opacity 0.3s 0.1s ease-out, transform 0.3s 0.1s ease-out' : 'none'
             }}
-            transition={{ duration: 0.6, delay: 0.1 }}
           >
             <span className={cn(
               "text-8xl font-bold tracking-tighter",
@@ -146,77 +118,65 @@ function ServiceScene({
             )}>
               0{index + 1}
             </span>
-          </motion.div>
+          </div>
 
-          {/* 标题 */}
-          <motion.h3
+          <h3
             className="text-5xl font-bold text-white leading-tight"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ 
+            style={{
               opacity: isActive ? 1 : 0,
-              y: isActive ? 0 : 30
+              transform: isActive ? 'translateY(0)' : 'translateY(30px)',
+              transition: isActive ? 'opacity 0.3s 0.2s ease-out, transform 0.3s 0.2s ease-out' : 'none'
             }}
-            transition={{ duration: 0.6, delay: 0.2 }}
           >
             {service.title}
-          </motion.h3>
+          </h3>
 
-          {/* 描述 */}
-          <motion.p
+          <p
             className="text-xl text-white/60 leading-relaxed max-w-lg"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ 
+            style={{
               opacity: isActive ? 1 : 0,
-              y: isActive ? 0 : 30
+              transform: isActive ? 'translateY(0)' : 'translateY(30px)',
+              transition: isActive ? 'opacity 0.3s 0.3s ease-out, transform 0.3s 0.3s ease-out' : 'none'
             }}
-            transition={{ duration: 0.6, delay: 0.3 }}
           >
             {service.description}
-          </motion.p>
+          </p>
 
-          {/* 特性标签 */}
-          <motion.div
+          <div
             className="flex flex-wrap gap-3"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ 
+            style={{
               opacity: isActive ? 1 : 0,
-              y: isActive ? 0 : 30
+              transform: isActive ? 'translateY(0)' : 'translateY(30px)',
+              transition: isActive ? 'opacity 0.3s 0.4s ease-out, transform 0.3s 0.4s ease-out' : 'none'
             }}
-            transition={{ duration: 0.6, delay: 0.4 }}
           >
             {service.features.map((feature, idx) => (
-              <motion.span
+              <span
                 key={idx}
                 className={cn(
                   "px-4 py-2 rounded-full text-sm font-medium",
                   "bg-white/5 border border-white/10 text-white/70",
-                  "backdrop-blur-sm",
-                  "hover:bg-white/10 hover:border-white/20 hover:text-white",
-                  "transition-all duration-300"
+                  "backdrop-blur-sm"
                 )}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
               >
                 {feature}
-              </motion.span>
+              </span>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
 
-      {/* 底部进度指示器 */}
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-3">
         {coreServices.map((_, idx) => (
-          <motion.div
+          <div
             key={idx}
             className={cn(
-              "h-1 rounded-full transition-all duration-500",
+              "h-1 rounded-full",
               idx === index 
                 ? cn("w-8", colors.accent) 
                 : "w-2 bg-white/20"
             )}
-            animate={{
-              scale: idx === index ? 1 : 0.8,
+            style={{
               opacity: idx === index ? 1 : 0.5
             }}
           />
@@ -226,126 +186,127 @@ function ServiceScene({
   );
 }
 
+// 导航指示器
+function NavigationIndicator({ 
+  total, 
+  current, 
+  onSelect 
+}: { 
+  total: number; 
+  current: number; 
+  onSelect: (index: number) => void;
+}) {
+  return (
+    <div className="flex flex-col items-center gap-3">
+      {Array.from({ length: total }).map((_, index) => (
+        <button
+          key={index}
+          onClick={() => onSelect(index)}
+          className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+            index === current 
+              ? 'bg-white scale-125' 
+              : 'bg-white/30 hover:bg-white/50'
+          }`}
+        />
+      ))}
+    </div>
+  );
+}
+
+// 进度条
+function ProgressBar({ progress }: { progress: number }) {
+  return (
+    <div className="w-full h-0.5 bg-white/10 overflow-hidden">
+      <div 
+        className="h-full bg-gradient-to-r from-blue-400 to-purple-400"
+        style={{ width: `${progress}%`, transition: 'width 0.1s linear' }}
+      />
+    </div>
+  );
+}
+
 // 主组件
 export function CoreServicesSection() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
   
+  // 使用 useScroll 监听滚动
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
   });
-
-  // 将滚动进度映射到活跃索引
-  useEffect(() => {
-    const unsubscribe = scrollYProgress.on("change", (latest) => {
-      const newIndex = Math.min(
-        Math.floor(latest * coreServices.length),
-        coreServices.length - 1
-      );
-      setActiveIndex(newIndex);
+  
+  // 监听滚动进度，直接跳转到对应页面
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    const targetPage = Math.round(latest * (serviceCount - 1));
+    const clampedPage = Math.max(0, Math.min(targetPage, serviceCount - 1));
+    if (clampedPage !== currentPage) {
+      setCurrentPage(clampedPage);
+    }
+  });
+  
+  // 计算进度百分比
+  const progress = (currentPage / (serviceCount - 1)) * 100;
+  
+  // 处理导航点击
+  const handleNavClick = (index: number) => {
+    if (!containerRef.current) return;
+    
+    const sectionTop = containerRef.current.offsetTop;
+    const targetProgress = index / (serviceCount - 1);
+    const totalScrollHeight = containerRef.current.scrollHeight - window.innerHeight;
+    const targetScrollY = sectionTop + targetProgress * totalScrollHeight;
+    
+    window.scrollTo({
+      top: targetScrollY,
+      behavior: 'smooth'
     });
-    return () => unsubscribe();
-  }, [scrollYProgress]);
-
+  };
+  
+  // 计算横向位移
+  const x = `-${currentPage * 100}%`;
+  
   return (
     <section 
       id="core-services" 
       ref={containerRef}
       className="relative bg-slate-950"
-      style={{ height: `${coreServices.length * 100}vh` }}
+      style={{ height: `${(serviceCount + 1) * 100}vh` }}
     >
       {/* 粘性容器 */}
       <div className="sticky top-0 h-screen overflow-hidden">
         {/* 背景效果 */}
         <div className="absolute inset-0">
-          {/* 动态渐变背景 */}
-          <motion.div 
-            className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"
-            animate={{
-              background: [
-                "linear-gradient(to bottom right, rgb(2,6,23), rgb(15,23,42), rgb(2,6,23))",
-                "linear-gradient(to bottom right, rgb(15,23,42), rgb(30,41,59), rgb(15,23,42))",
-                "linear-gradient(to bottom right, rgb(2,6,23), rgb(15,23,42), rgb(2,6,23))",
-              ]
-            }}
-            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-          />
-          
-          {/* 流动光效 */}
-          <motion.div
-            className="absolute inset-0 opacity-30"
-            style={{
-              background: "radial-gradient(circle at 50% 50%, rgba(59,130,246,0.3) 0%, transparent 50%)"
-            }}
-            animate={{
-              x: ["-20%", "20%", "-20%"],
-              y: ["-10%", "10%", "-10%"],
-            }}
-            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-950/20 via-slate-950 to-purple-950/20" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-3xl" />
         </div>
-
+        
+        {/* 顶部进度条 */}
+        <div className="absolute top-0 left-0 right-0 z-20">
+          <ProgressBar progress={progress} />
+        </div>
+        
         {/* 横向滑动容器 */}
-        <motion.div 
-          className="relative h-full flex"
-          style={{
-            x: useTransform(scrollYProgress, [0, 1], ["0%", `-${(coreServices.length - 1) * 100}%`])
-          }}
+        <div 
+          className="relative h-full flex will-change-transform"
+          style={{ transform: `translateX(${x})` }}
         >
           {coreServices.map((service, index) => (
             <ServiceScene
               key={index}
               service={service}
               index={index}
-              isActive={index === activeIndex}
+              isActive={index === currentPage}
             />
           ))}
-        </motion.div>
-
-        {/* 左侧固定导航 */}
-        <div className="fixed left-8 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col items-center gap-4">
-          {/* 连接线 */}
-          <div className="absolute top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
-          
-          {coreServices.map((service, index) => (
-            <motion.button
-              key={index}
-              className={cn(
-                "relative w-4 h-4 rounded-full transition-all duration-500 z-10",
-                index === activeIndex 
-                  ? cn("scale-150", colorVariants[service.color].accent) 
-                  : "bg-white/20 hover:bg-white/40"
-              )}
-              onClick={() => {
-                const container = containerRef.current;
-                if (container) {
-                  const scrollTo = (index / (coreServices.length - 1)) * (container.scrollHeight - container.clientHeight);
-                  container.scrollTo({ top: scrollTo, behavior: "smooth" });
-                }
-              }}
-              whileHover={{ scale: index === activeIndex ? 1.5 : 1.2 }}
-            >
-              {/* 发光效果 */}
-              {index === activeIndex && (
-                <motion.div
-                  className={cn(
-                    "absolute inset-0 rounded-full blur-md",
-                    colorVariants[service.color].accent
-                  )}
-                  animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0.8, 0.5] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                />
-              )}
-            </motion.button>
-          ))}
         </div>
-
-        {/* 顶部进度条 */}
-        <div className="fixed top-0 left-0 right-0 h-1 bg-white/5 z-50">
-          <motion.div 
-            className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500"
-            style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
+        
+        {/* 导航指示器 */}
+        <div className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-20">
+          <NavigationIndicator 
+            total={serviceCount}
+            current={currentPage}
+            onSelect={handleNavClick}
           />
         </div>
       </div>
