@@ -3,11 +3,11 @@ import { CTASection as SharedCTASection } from "@/components/sections/shared/cta
 export function CTASection() {
   return (
     <SharedCTASection 
-      title="准备好开启您的跨境之旅了吗？"
-      subtitle="预约免费咨询，获取专属跨境增长方案。我们的专家团队将在24小时内与您联系。"
-      primaryButtonText="立即预约咨询"
+      title="把下一阶段增长目标，变成可执行方案"
+      subtitle="告诉我们你的品牌阶段与核心挑战，我们会在 24 小时内提供一份初步增长诊断和优先级建议。"
+      primaryButtonText="预约增长诊断"
       primaryButtonHref="/contact"
-      secondaryButtonText="了解更多服务"
+      secondaryButtonText="查看服务能力"
       secondaryButtonHref="/services"
       variant="gradient"
     />

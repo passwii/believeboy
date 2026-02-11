@@ -2,107 +2,131 @@
 
 import { SlideUp } from "@/components/effects/slide-up";
 import { 
-  Globe, 
-  Zap, 
-  TrendingUp, 
-  Heart,
-  Award,
-  Sparkles
+  ArrowRight,
+  ChartSpline,
+  Globe,
+  Layers3,
+  Workflow,
 } from "lucide-react";
+import Link from "next/link";
 
 export function CompanySection() {
+  const phases = [
+    {
+      title: "市场与品牌定位",
+      desc: "识别目标市场、价格带和用户偏好，建立可执行的品类与品牌策略。",
+    },
+    {
+      title: "渠道与内容增长",
+      desc: "围绕平台规则搭建流量结构，打通广告投放、内容矩阵和达人协同。",
+    },
+    {
+      title: "经营与复购优化",
+      desc: "通过利润模型、库存策略和生命周期运营，持续提升经营效率。",
+    },
+  ];
+
+  const cards = [
+    {
+      icon: Layers3,
+      title: "全链路执行",
+      desc: "策略、运营、创意、数据在一个团队内闭环。",
+      color: "bg-sky-100 text-sky-700",
+    },
+    {
+      icon: Workflow,
+      title: "方法论资产化",
+      desc: "把有效动作沉淀成SOP，不依赖单一人才经验。",
+      color: "bg-cyan-100 text-cyan-700",
+    },
+    {
+      icon: ChartSpline,
+      title: "经营导向增长",
+      desc: "不只看GMV，更关注利润质量和长期品牌价值。",
+      color: "bg-emerald-100 text-emerald-700",
+    },
+    {
+      icon: Globe,
+      title: "多市场协同",
+      desc: "覆盖北美、欧洲和东南亚主流平台与消费者场景。",
+      color: "bg-indigo-100 text-indigo-700",
+    },
+  ];
+
   return (
-    <section className="py-20 md:py-24 lg:py-32 bg-slate-50">
+    <section className="bg-slate-50 py-20 md:py-24 lg:py-32">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* 左侧内容 */}
+        <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
             <SlideUp>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-6">
-                <Award className="w-4 h-4" />
-                <span>公司简介</span>
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-700">
+                <span>我们的角色</span>
               </div>
             </SlideUp>
             
             <SlideUp delay={0.1}>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">
-                彼励扶 <span className="text-blue-600">BelieveBoy</span>
+              <h2 className="mb-6 text-3xl font-bold leading-tight text-slate-900 md:text-4xl">
+                彼励扶 <span className="text-blue-700">BelieveBoy</span>
+                <span className="block text-slate-700">是品牌的出海增长团队</span>
               </h2>
             </SlideUp>
             
             <SlideUp delay={0.2}>
-              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                <strong className="text-slate-900">彼励扶电子商务（苏州）有限公司</strong>
-                ，是一家
-                <span className="text-blue-600 font-semibold">专注为中国品牌提供全链路跨境电商解决方案的战略合伙人</span>。
+              <p className="mb-8 text-base leading-relaxed text-slate-600 md:text-lg">
+                我们专注服务中国品牌全球化，从“单点运营”升级到“系统增长”。
+                团队同时覆盖业务策略、平台运营、增长创意、数据分析与复盘机制，
+                帮客户在复杂市场里保持清晰节奏和稳定产出。
               </p>
             </SlideUp>
-            
+
             <SlideUp delay={0.3}>
-              <p className="text-base text-slate-600 mb-8 leading-relaxed">
-                我们是一支专注于跨境电商领域的专业团队，汇聚了一群怀揣梦想、充满活力的年轻精英。拥有全球视野与创新精神，致力于为中国品牌出海提供全链路解决方案。
-              </p>
-            </SlideUp>
-            
-            <SlideUp delay={0.4}>
-              <div className="inline-flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl text-white">
-                <Sparkles className="w-6 h-6" />
-                <span className="text-xl font-bold">让中国品牌闪耀全球</span>
+              <div className="space-y-4">
+                {phases.map((phase, index) => (
+                  <div key={phase.title} className="rounded-xl border border-slate-200 bg-white p-4">
+                    <div className="mb-2 flex items-center gap-2">
+                      <span className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-900 text-xs font-bold text-white">
+                        {index + 1}
+                      </span>
+                      <h3 className="font-semibold text-slate-900">{phase.title}</h3>
+                    </div>
+                    <p className="text-sm leading-relaxed text-slate-600">{phase.desc}</p>
+                  </div>
+                ))}
               </div>
+            </SlideUp>
+
+            <SlideUp delay={0.4}>
+              <Link
+                href="/services"
+                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-blue-700 transition hover:text-blue-900"
+              >
+                查看完整服务模块
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </SlideUp>
           </div>
           
-          {/* 右侧装饰 */}
           <SlideUp delay={0.2} className="relative">
-            <div className="relative">
-              {/* 主卡片 */}
-              <div className="bg-white rounded-2xl shadow-xl p-8 relative z-10">
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center flex-shrink-0">
-                      <Globe className="w-6 h-6 text-blue-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-slate-900 mb-1">全球市场覆盖</h4>
-                      <p className="text-sm text-slate-600">北美、欧洲、亚太等主要电商市场</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-cyan-100 flex items-center justify-center flex-shrink-0">
-                      <Zap className="w-6 h-6 text-cyan-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-slate-900 mb-1">AI智能驱动</h4>
-                      <p className="text-sm text-slate-600">自研AI决策系统，效率提升5倍</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0">
-                      <TrendingUp className="w-6 h-6 text-emerald-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-slate-900 mb-1">结果导向</h4>
-                      <p className="text-sm text-slate-600">以数据为基石，创造可量化商业价值</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
-                      <Heart className="w-6 h-6 text-indigo-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-slate-900 mb-1">长期主义</h4>
-                      <p className="text-sm text-slate-600">构建可持续的全球竞争力</p>
-                    </div>
-                  </div>
-                </div>
+            <div className="relative rounded-3xl border border-slate-200 bg-white p-6 shadow-xl md:p-8">
+              <div className="mb-6 border-b border-slate-100 pb-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Growth Blueprint</p>
+                <h3 className="mt-2 text-2xl font-bold text-slate-900">增长执行蓝图</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                  我们将复杂的跨境运营拆解为可追踪、可复盘、可放大的执行模块。
+                </p>
               </div>
-              
-              {/* 装饰元素 */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-2xl" />
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-indigo-500/20 to-violet-500/20 rounded-full blur-2xl" />
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                {cards.map((card) => (
+                  <div key={card.title} className="rounded-2xl border border-slate-100 bg-slate-50 p-4">
+                    <div className={`mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl ${card.color}`}>
+                      <card.icon className="h-5 w-5" />
+                    </div>
+                    <h4 className="mb-1 text-sm font-semibold text-slate-900">{card.title}</h4>
+                    <p className="text-xs leading-relaxed text-slate-600">{card.desc}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </SlideUp>
         </div>

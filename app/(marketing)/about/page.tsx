@@ -7,8 +7,9 @@ import { CooperationIdeasSection } from "./modules/cooperation-ideas";
 import { CTASection } from "./modules/cta";
 
 export const metadata: Metadata = {
-  title: "关于我们 | 彼励扶 - 跨境电商战略合伙人",
-  description: "了解彼励扶电子商务（苏州）有限公司的使命与愿景。专注为中国品牌提供全链路跨境电商解决方案。",
+  title: "关于彼励扶 | 中国品牌全球增长合作伙伴",
+  description:
+    "彼励扶（BelieveBoy）专注服务中国品牌出海，提供策略、运营、内容与数据一体化增长解决方案，帮助品牌构建可持续全球化能力。",
 };
 
 export default function AboutPage() {
@@ -16,8 +17,8 @@ export default function AboutPage() {
     <main className="min-h-screen">
       <HeroSection />
       <CompanySection />
-      <CoreValuesSection />
       <TeamStatsSection />
+      <CoreValuesSection />
       <CooperationIdeasSection />
       <CTASection />
     </main>

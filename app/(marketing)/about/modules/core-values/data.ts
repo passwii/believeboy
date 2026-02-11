@@ -1,8 +1,8 @@
 import { 
-  Globe, 
-  Zap, 
-  TrendingUp, 
-  Heart,
+  Bot,
+  ChartNoAxesCombined,
+  Compass,
+  Handshake,
   type LucideIcon 
 } from "lucide-react";
 
@@ -15,27 +15,27 @@ export interface CoreValue {
 
 export const coreValues: CoreValue[] = [
   {
-    icon: Globe,
-    title: "全生态服务能力",
-    description: "从市场调研到品牌建设，提供全链路覆盖的跨境电商解决方案，一站式满足您的出海需求。",
-    color: "from-blue-500 to-cyan-500",
+    icon: Compass,
+    title: "战略先于执行",
+    description: "所有投放、选品、内容动作都从品牌阶段目标反推，避免无效增长。",
+    color: "from-sky-500 to-blue-600",
   },
   {
-    icon: Zap,
-    title: "AI深度赋能",
-    description: "自研AI决策系统，将运营效率提升5倍，用数据智能驱动每一个商业决策。",
-    color: "from-cyan-500 to-teal-500",
+    icon: Bot,
+    title: "AI嵌入日常运营",
+    description: "把AI用在关键词、创意、定价和复盘中，让团队把时间留给关键判断。",
+    color: "from-cyan-500 to-teal-600",
   },
   {
-    icon: TrendingUp,
-    title: "结果导向合作",
-    description: "关注销售额、利润率、品牌资产等可量化价值，以实际成果衡量合作成效。",
-    color: "from-emerald-500 to-green-500",
+    icon: ChartNoAxesCombined,
+    title: "指标透明到日",
+    description: "建立统一增长看板，持续追踪流量质量、转化效率、利润结构和复购。",
+    color: "from-emerald-500 to-green-600",
   },
   {
-    icon: Heart,
-    title: "长期主义理念",
-    description: "帮助客户构建可持续的全球竞争力，追求深度互信的战略伙伴关系。",
-    color: "from-indigo-500 to-violet-500",
+    icon: Handshake,
+    title: "共担结果的伙伴关系",
+    description: "不做外包思维的短期协作，而是与品牌共建可持续、可复制的出海体系。",
+    color: "from-indigo-500 to-sky-600",
   },
 ];

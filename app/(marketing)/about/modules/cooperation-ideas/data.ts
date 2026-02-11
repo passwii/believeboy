@@ -1,7 +1,7 @@
 import { 
-  Clock,
-  Users,
-  Target,
+  ClipboardCheck,
+  Route,
+  Rocket,
   type LucideIcon 
 } from "lucide-react";
 
@@ -13,18 +13,18 @@ export interface CooperationIdea {
 
 export const cooperationIdeas: CooperationIdea[] = [
   {
-    icon: Clock,
-    title: "长期主义合作",
-    description: "我们拒绝短视的'一次性交易'，追求与客户建立深度互信的战略伙伴关系。通过SharePoint与Notion构建的数字化运营资产体系，将方法论、流程与知识沉淀为可复用的核心资产。",
+    icon: ClipboardCheck,
+    title: "阶段对齐",
+    description: "在合作启动前统一商业目标、预算边界与里程碑，确保每一步都对应清晰回报。",
   },
   {
-    icon: Users,
-    title: "共同成长",
-    description: "我们相信，客户的成功就是我们的成功。每一次合作都是双向奔赴，我们投入的不只是专业能力和时间，更是对客户业务的深度思考与情感投入。",
+    icon: Route,
+    title: "双周迭代",
+    description: "以两周为节奏执行、复盘、优化，把问题暴露在最短周期内，减少试错成本。",
   },
   {
-    icon: Target,
-    title: "可持续未来",
-    description: "我们致力于帮助客户构建长期竞争力，而非追求短期爆单。从品牌建设到用户运营，从供应链优化到合规风控，为企业的全球化之路奠定坚实基础。",
+    icon: Rocket,
+    title: "资产沉淀",
+    description: "把有效策略沉淀为SOP与增长资产包，让团队离开项目后仍能持续放大成果。",
   },
 ];

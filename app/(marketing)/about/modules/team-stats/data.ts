@@ -5,8 +5,8 @@ export interface TeamStat {
 }
 
 export const teamStats: TeamStat[] = [
-  { value: 3, suffix: "年+", label: "核心成员平均操盘经验" },
-  { value: 7, suffix: "个", label: "跨境平台运营能力" },
-  { value: 10, suffix: "个", label: "Best Seller成功案例" },
-  { value: 100, suffix: "M+", label: "人均操盘业绩" },
+  { value: 38, suffix: "+", label: "服务品牌与项目数" },
+  { value: 6, suffix: "个", label: "核心跨境平台覆盖" },
+  { value: 120, suffix: "M+", label: "累计GMV管理规模" },
+  { value: 95, suffix: "%", label: "客户续约与增购率" },
 ];

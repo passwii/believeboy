@@ -319,31 +319,31 @@ export function XPackageSection() {
           variants={containerVariants}
           className="mb-24"
         >
-          <motion.div variants={itemVariants} className="mx-auto mb-12 max-w-3xl text-center">
-            <h3 className="mb-3 text-2xl font-semibold text-white md:text-3xl">
+          <motion.div variants={itemVariants} className="mx-auto mb-16 max-w-4xl text-center md:mb-20">
+            <h3 className="mb-5 text-3xl font-medium tracking-tight text-white md:text-5xl">
               八大服务模块
             </h3>
-            <p className="text-slate-300">
-              从战略到落地的 8 步执行链路，每一步都可量化、可复盘
+            <p className="mx-auto max-w-2xl text-base leading-relaxed text-slate-400 md:text-lg">
+              从战略定义到增长执行，以八个关键步骤完成品牌出海的完整闭环。
             </p>
           </motion.div>
 
-          <div className="relative overflow-hidden rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-cyan-900/10 via-slate-950/75 to-blue-900/10 p-6 md:p-10">
+          <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-slate-950/55 p-7 md:p-12 lg:p-16">
             <div className="pointer-events-none absolute inset-0">
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/60 to-transparent" />
-              <div className="absolute -left-20 top-1/3 h-56 w-56 rounded-full bg-cyan-500/10 blur-3xl" />
-              <div className="absolute -right-24 bottom-0 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl" />
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+              <div className="absolute -left-24 top-1/4 h-56 w-56 rounded-full bg-cyan-400/8 blur-3xl" />
+              <div className="absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-blue-400/8 blur-3xl" />
             </div>
 
-            <div className="relative mb-8 flex items-center justify-between">
-              <p className="text-sm uppercase tracking-[0.18em] text-cyan-200/80">Execution Path</p>
-              <p className="text-xs text-slate-400">8 Steps / End-to-End</p>
+            <div className="relative mb-12 flex items-center justify-between border-b border-white/10 pb-4 md:mb-14">
+              <p className="text-xs uppercase tracking-[0.24em] text-cyan-200/85">Editorial Sequence</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-slate-400">01 - 08</p>
             </div>
 
-            <div className="relative px-1 md:px-3 lg:px-8">
-              <div className="pointer-events-none absolute bottom-0 left-5 top-0 w-px bg-gradient-to-b from-cyan-300/20 via-cyan-300/70 to-transparent lg:left-1/2 lg:-translate-x-1/2" />
+            <div className="relative px-1 md:px-4 lg:px-10">
+              <div className="pointer-events-none absolute bottom-0 left-6 top-0 w-px bg-gradient-to-b from-white/20 via-cyan-200/70 to-transparent lg:left-1/2 lg:-translate-x-1/2" />
 
-              <div className="space-y-7 md:space-y-8">
+              <div className="space-y-10 md:space-y-12">
                 {serviceModules.map((module, index) => {
                   const isLeft = index % 2 === 0;
 
@@ -351,13 +351,13 @@ export function XPackageSection() {
                     <motion.div
                       key={index}
                       variants={itemVariants}
-                      className="relative grid min-h-24 grid-cols-[2.5rem_1fr] items-center gap-4 lg:min-h-28 lg:grid-cols-[minmax(0,1fr)_4rem_minmax(0,1fr)] lg:gap-8"
+                      className="relative grid min-h-28 grid-cols-[3rem_1fr] items-center gap-5 lg:min-h-36 lg:grid-cols-[minmax(0,1fr)_5rem_minmax(0,1fr)] lg:gap-10"
                     >
                       <div className="hidden lg:block" />
 
                       <div className="relative z-10 col-start-1 row-start-1 flex items-center justify-center lg:col-start-2">
-                        <div className="flex h-11 w-11 items-center justify-center rounded-full border border-cyan-300/45 bg-slate-900/95 shadow-[0_0_20px_-8px_rgba(34,211,238,0.85)]">
-                          <module.icon className="h-5 w-5 text-cyan-200" />
+                        <div className="flex h-12 w-12 items-center justify-center rounded-full border border-cyan-200/45 bg-slate-900/95 shadow-[0_0_24px_-8px_rgba(125,211,252,0.85)]">
+                          <module.icon className="h-5 w-5 text-cyan-100" />
                         </div>
                       </div>
 
@@ -366,18 +366,18 @@ export function XPackageSection() {
                           isLeft ? "lg:col-start-1 lg:text-right" : "lg:col-start-3 lg:text-left"
                         }`}
                       >
-                        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-cyan-200/85">
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200/80">
                           Step {String(index + 1).padStart(2, "0")}
                         </p>
-                        <h4 className="mt-1 text-2xl font-semibold leading-tight text-white md:text-[1.75rem]">
+                        <h4 className="mt-2 text-3xl font-medium leading-[1.05] text-white md:text-4xl">
                           {module.name}
                         </h4>
-                        <p className="mt-2 text-base leading-relaxed text-slate-200">
+                        <p className={`mt-3 text-sm leading-relaxed text-slate-400 md:text-base ${isLeft ? "lg:ml-auto" : ""}`}>
                           {module.desc}
                         </p>
                         <div
-                          className={`mt-3 h-px w-28 bg-gradient-to-r from-cyan-300/75 to-transparent ${
-                            isLeft ? "lg:ml-auto lg:bg-gradient-to-l" : ""
+                          className={`mt-5 h-px w-24 bg-gradient-to-r from-cyan-200/75 to-transparent ${
+                            isLeft ? "lg:ml-auto lg:bg-gradient-to-l lg:from-transparent lg:to-cyan-200/75" : ""
                           }`}
                         />
                       </div>
