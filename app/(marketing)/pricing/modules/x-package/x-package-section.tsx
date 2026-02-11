@@ -328,57 +328,63 @@ export function XPackageSection() {
             </p>
           </motion.div>
 
-          <div className="relative overflow-hidden rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-cyan-900/15 via-slate-950/70 to-blue-900/20 p-5 md:p-8">
+          <div className="relative overflow-hidden rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-cyan-900/10 via-slate-950/75 to-blue-900/10 p-6 md:p-10">
             <div className="pointer-events-none absolute inset-0">
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/70 to-transparent" />
-              <div className="absolute -right-20 top-1/2 h-52 w-52 -translate-y-1/2 rounded-full bg-cyan-500/15 blur-3xl" />
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/60 to-transparent" />
+              <div className="absolute -left-20 top-1/3 h-56 w-56 rounded-full bg-cyan-500/10 blur-3xl" />
+              <div className="absolute -right-24 bottom-0 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl" />
             </div>
 
-            <div className="relative mb-6 flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 md:px-5">
-              <p className="text-sm text-slate-200 md:text-base">
-                执行链路可视化
-              </p>
-              <p className="text-xs uppercase tracking-[0.2em] text-cyan-200/80">
-                01 - 08 Modules
-              </p>
+            <div className="relative mb-8 flex items-center justify-between">
+              <p className="text-sm uppercase tracking-[0.18em] text-cyan-200/80">Execution Path</p>
+              <p className="text-xs text-slate-400">8 Steps / End-to-End</p>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
-              {serviceModules.map((module, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  whileHover={{ y: -6 }}
-                  className="group"
-                >
-                  <div
-                    className={`relative h-full overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60 p-5 transition-all duration-300 hover:border-cyan-300/35 hover:bg-slate-900/80 ${
-                      index % 2 === 1 ? "xl:mt-6" : ""
-                    }`}
-                  >
-                    <div className="mb-5 flex items-center justify-between">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20">
-                        <module.icon className="h-5 w-5 text-cyan-200" />
+            <div className="relative px-1 md:px-3 lg:px-8">
+              <div className="pointer-events-none absolute bottom-0 left-5 top-0 w-px bg-gradient-to-b from-cyan-300/20 via-cyan-300/70 to-transparent lg:left-1/2 lg:-translate-x-1/2" />
+
+              <div className="space-y-7 md:space-y-8">
+                {serviceModules.map((module, index) => {
+                  const isLeft = index % 2 === 0;
+
+                  return (
+                    <motion.div
+                      key={index}
+                      variants={itemVariants}
+                      className="relative grid min-h-24 grid-cols-[2.5rem_1fr] items-center gap-4 lg:min-h-28 lg:grid-cols-[minmax(0,1fr)_4rem_minmax(0,1fr)] lg:gap-8"
+                    >
+                      <div className="hidden lg:block" />
+
+                      <div className="relative z-10 col-start-1 row-start-1 flex items-center justify-center lg:col-start-2">
+                        <div className="flex h-11 w-11 items-center justify-center rounded-full border border-cyan-300/45 bg-slate-900/95 shadow-[0_0_20px_-8px_rgba(34,211,238,0.85)]">
+                          <module.icon className="h-5 w-5 text-cyan-200" />
+                        </div>
                       </div>
-                      <span className="text-xs font-semibold tracking-[0.16em] text-cyan-200/80">
-                        STEP {String(index + 1).padStart(2, "0")}
-                      </span>
-                    </div>
 
-                    <h4 className="mb-1 text-lg font-semibold text-white transition-colors duration-300 group-hover:text-cyan-200">
-                      {module.name}
-                    </h4>
-                    <p className="text-sm text-slate-300">{module.desc}</p>
-
-                    <div className="mt-5 h-1 rounded-full bg-white/10">
                       <div
-                        className="h-full rounded-full bg-gradient-to-r from-cyan-300 to-blue-400"
-                        style={{ width: `${(index + 1) * 12.5}%` }}
-                      />
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+                        className={`col-start-2 row-start-1 ${
+                          isLeft ? "lg:col-start-1 lg:text-right" : "lg:col-start-3 lg:text-left"
+                        }`}
+                      >
+                        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-cyan-200/85">
+                          Step {String(index + 1).padStart(2, "0")}
+                        </p>
+                        <h4 className="mt-1 text-2xl font-semibold leading-tight text-white md:text-[1.75rem]">
+                          {module.name}
+                        </h4>
+                        <p className="mt-2 text-base leading-relaxed text-slate-200">
+                          {module.desc}
+                        </p>
+                        <div
+                          className={`mt-3 h-px w-28 bg-gradient-to-r from-cyan-300/75 to-transparent ${
+                            isLeft ? "lg:ml-auto lg:bg-gradient-to-l" : ""
+                          }`}
+                        />
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </motion.div>
