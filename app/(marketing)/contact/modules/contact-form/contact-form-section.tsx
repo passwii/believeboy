@@ -62,19 +62,36 @@ export function ContactFormSection() {
     
     setIsSubmitting(true);
     
-    // 模拟提交
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormData({
-      name: "",
-      company: "",
-      phone: "",
-      email: "",
-      inquiryType: "",
-      message: "",
-    });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "提交失败");
+      }
+
+      setIsSubmitted(true);
+      setFormData({
+        name: "",
+        company: "",
+        phone: "",
+        email: "",
+        inquiryType: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("提交失败:", error);
+      alert("提交失败，请稍后重试");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (field: string, value: string) => {
