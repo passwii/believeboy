@@ -1,35 +1,35 @@
 import { FadeIn } from "@/components/effects/fade-in";
 import { SectionEyebrow, SectionShell } from "@/components/sections/home-v2/section-shell";
-import { MarqueeStrip } from "@/components/sections/home-v2/marquee-strip";
 import { platforms } from "./data";
 
 export function LogoWallSection() {
   return (
-    <SectionShell className="border-y border-zinc-200/80 bg-zinc-50 py-10 md:py-12">
-      <div className="space-y-6">
-        <FadeIn className="flex flex-col items-start gap-3 md:flex-row md:items-center md:justify-between">
+    <SectionShell className="border-y border-zinc-200 bg-stone-50 py-10 md:py-12">
+      <div className="space-y-7">
+        <FadeIn className="grid gap-5 rounded-3xl border border-stone-200 bg-white p-5 md:grid-cols-[1fr_auto] md:items-center md:p-7">
           <div>
-            <SectionEyebrow>Platform Coverage</SectionEyebrow>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-600 md:text-base">
-              覆盖 Amazon、Walmart、TikTok Shop 等主流跨境渠道，支持品牌多平台联动运营。
+            <SectionEyebrow>平台覆盖能力</SectionEyebrow>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-stone-600 md:text-base">
+              深入亚马逊、沃尔玛、TikTok Shop 与独立站生态，构建跨平台一致增长系统。
             </p>
           </div>
-          <p className="font-mono text-sm tracking-wide text-zinc-500">7+ years marketplace operations stack</p>
+          <p className="rounded-full border border-amber-200 bg-amber-50 px-4 py-2 text-xs font-medium uppercase tracking-[0.14em] text-amber-700 md:text-sm">
+            7年以上平台操盘方法论
+          </p>
         </FadeIn>
 
-        <div className="grid gap-4 md:grid-cols-[1.2fr_1fr]">
-          <MarqueeStrip items={platforms.map((platform) => ({ label: platform.name }))} />
-          <div className="rounded-2xl border border-zinc-200 bg-white p-4">
-            <p className="text-xs uppercase tracking-[0.15em] text-zinc-500">Trusted Platform Matrix</p>
-            <div className="mt-3 grid grid-cols-2 gap-2">
-              {platforms.slice(0, 6).map((platform) => (
-                <div key={platform.name} className="inline-flex items-center gap-2 rounded-xl border border-zinc-200 bg-zinc-50 px-3 py-2">
-                  <platform.icon size={16} weight="duotone" className="text-[var(--home-v2-accent)]" />
-                  <span className="text-sm text-zinc-700">{platform.name}</span>
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
+          {platforms.map((platform, index) => (
+            <FadeIn key={platform.name} delay={index * 0.05}>
+              <div className="home-v2-interactive rounded-2xl border border-stone-200 bg-white p-4 hover:-translate-y-1 hover:border-stone-300 hover:shadow-md">
+                <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-stone-100 text-amber-700">
+                  <platform.icon size={18} weight="duotone" />
                 </div>
-              ))}
-            </div>
-          </div>
+                <p className="mt-3 text-sm font-medium text-stone-900">{platform.name}</p>
+                <p className="mt-1 text-xs text-stone-500">渠道深度运营</p>
+              </div>
+            </FadeIn>
+          ))}
         </div>
       </div>
     </SectionShell>

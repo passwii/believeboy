@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { Separator } from "@/components/ui/separator";
-import { Mail, Phone, MapPin, ArrowUpRight, ExternalLink } from "lucide-react";
+import { Mail, MapPin, ExternalLink } from "lucide-react";
 
 // 类型定义 - 提高代码可维护性和类型安全
 interface FooterLink {
@@ -96,9 +95,13 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-slate-300">
+    <footer className="relative overflow-hidden bg-[radial-gradient(120%_85%_at_50%_0%,#12305b_0%,#081325_44%,#030712_100%)] text-slate-300">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 opacity-35 [background-image:linear-gradient(rgba(148,163,184,0.2)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.2)_1px,transparent_1px)] [background-size:48px_48px]" />
+      </div>
+
       {/* Main Footer */}
-      <div className="container mx-auto px-4 py-16 md:py-20 md:px-6 lg:px-8">
+      <div className="relative z-10 container mx-auto px-4 py-16 md:py-20 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-6">
@@ -114,12 +117,12 @@ export function Footer() {
             <div className="space-y-3">
               <a
                 href="mailto:business@believeboy.com"
-                className="flex items-center gap-3 text-slate-400 hover:text-cyan-400 transition-colors group"
+                className="flex items-center gap-3 text-slate-300 hover:text-cyan-300 transition-colors group"
               >
                 <Mail className="w-4 h-4" />
                 <span>business@believeboy.com</span>
               </a>
-              <div className="flex items-center gap-3 text-slate-400">
+              <div className="flex items-center gap-3 text-slate-300">
                 <MapPin className="w-4 h-4" />
                 <span>苏州市吴江区太湖新城财智汇大厦2303室</span>
               </div>
@@ -131,7 +134,7 @@ export function Footer() {
               <div className="flex gap-3">
                 <a
                   href="#"
-                  className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-cyan-500 hover:text-white transition-all"
+                  className="w-9 h-9 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-slate-300 hover:bg-cyan-500 hover:text-white transition-all"
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c4.8 0 8.691-3.287 8.691-7.342 0-4.054-3.891-7.34-8.691-7.34z" />
@@ -139,7 +142,7 @@ export function Footer() {
                 </a>
                 <a
                   href="#"
-                  className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all"
+                  className="w-9 h-9 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-slate-300 hover:bg-blue-600 hover:text-white transition-all"
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -165,10 +168,10 @@ export function Footer() {
                         href={link.href}
                         rel={isExternal ? "noopener noreferrer" : undefined}
                         target={isExternal ? "_blank" : undefined}
-                        className="text-slate-400 hover:text-cyan-400 transition-colors inline-flex items-center group"
+                        className="text-slate-300 hover:text-cyan-300 transition-colors inline-flex items-center group"
                       >
                         {link.icon && (
-                          <span className="mr-2 flex-shrink-0 text-slate-500 group-hover:text-cyan-400 transition-colors">
+                          <span className="mr-2 flex-shrink-0 text-slate-400 group-hover:text-cyan-300 transition-colors">
                             {link.icon}
                           </span>
                         )}
@@ -187,7 +190,7 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-slate-800">
+      <div className="relative z-10 border-t border-white/10 bg-black/10 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-6 md:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-slate-500 text-center md:text-left">

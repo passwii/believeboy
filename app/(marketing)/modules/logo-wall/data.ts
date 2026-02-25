@@ -13,10 +13,10 @@ export interface Platform {
 }
 
 export const platforms: Platform[] = [
-  { name: "Amazon", icon: ShoppingCartSimple },
+  { name: "亚马逊", icon: ShoppingCartSimple },
   { name: "Shopify", icon: GlobeHemisphereWest },
   { name: "TikTok Shop", icon: Sparkle },
   { name: "eBay", icon: Package },
-  { name: "Walmart", icon: Target },
+  { name: "沃尔玛", icon: Target },
   { name: "独立站", icon: GlobeHemisphereWest },
 ];
