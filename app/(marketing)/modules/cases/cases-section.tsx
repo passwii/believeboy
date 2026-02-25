@@ -1,81 +1,84 @@
 import Link from "next/link";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/effects/fade-in";
-import { StaggerContainer, StaggerItem } from "@/components/effects/slide-up";
-import { ArrowRight, Package } from "lucide-react";
+import { SectionEyebrow, SectionShell } from "@/components/sections/home-v2/section-shell";
 import { cases } from "./data";
+
+function CaseCard({
+  caseItem,
+  className,
+}: {
+  caseItem: (typeof cases)[number];
+  className?: string;
+}) {
+  return (
+    <Link
+      href="/cases"
+      className={`group home-v2-interactive overflow-hidden rounded-[var(--home-v2-radius)] border border-zinc-200 bg-white ${className ?? ""}`}
+    >
+      <div className="relative aspect-[16/10] overflow-hidden bg-zinc-100">
+        <img
+          src={`https://picsum.photos/seed/${encodeURIComponent(caseItem.title)}/1200/760`}
+          alt={caseItem.title}
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/50 via-zinc-900/10 to-transparent" />
+        <div className="absolute bottom-4 left-4 inline-flex rounded-full border border-white/30 bg-black/20 px-3 py-1 text-xs text-white backdrop-blur-sm">
+          {caseItem.platform}
+        </div>
+      </div>
+
+      <div className="space-y-4 p-5 md:p-6">
+        <h3 className="text-xl font-semibold tracking-tight text-zinc-900">{caseItem.title}</h3>
+        <p className="text-sm leading-relaxed text-zinc-600">{caseItem.description}</p>
+        <div className="border-t border-zinc-200 pt-4">
+          <dl className="grid grid-cols-3 gap-3">
+            {caseItem.metrics.map((metric) => (
+              <div key={metric.label} className="space-y-1">
+                <dt className="text-[11px] uppercase tracking-[0.08em] text-zinc-500">{metric.label}</dt>
+                <dd className="font-mono text-sm font-semibold text-[var(--home-v2-accent)]">{metric.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+    </Link>
+  );
+}
 
 export function CasesSection() {
   return (
-    <section className="py-20 md:py-24 lg:py-32 bg-white">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <FadeIn className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-violet-100 text-violet-700 text-sm font-medium mb-4">
-            成功案例
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-            客户的成功，就是我们的成功
-          </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            深度行业理解 + 数据驱动决策 = 可量化的商业价值
-          </p>
+    <SectionShell id="cases" className="bg-[var(--home-v2-bg)]">
+      <FadeIn className="mb-10 space-y-4 md:mb-12">
+        <SectionEyebrow>Case Studies</SectionEyebrow>
+        <h2 className="text-4xl font-semibold tracking-tight text-zinc-900 md:text-5xl">2+1 非对称案例墙，聚焦可量化增长结果</h2>
+        <p className="max-w-[62ch] text-base leading-relaxed text-zinc-600 md:text-lg">
+          真实项目结果覆盖大件家居、厨具与品牌独立站，持续验证跨平台运营方法的可复制性。
+        </p>
+      </FadeIn>
+
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:grid-rows-[1fr_1fr]">
+        <FadeIn>
+          <CaseCard caseItem={cases[0]} className="md:row-span-2 h-full" />
         </FadeIn>
-
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {cases.map((caseItem, index) => (
-            <StaggerItem key={index}>
-              <Link href="/cases" className="group block">
-                <div className="bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300 h-full">
-                  {/* Image */}
-                  <div className="aspect-video bg-slate-200 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-cyan-100 flex items-center justify-center">
-                      <Package className="w-16 h-16 text-slate-300" />
-                    </div>
-                    {/* Overlay on hover */}
-                    <div className="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/10 transition-colors" />
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-6">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded">
-                        {caseItem.platform}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-semibold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">
-                      {caseItem.title}
-                    </h3>
-                    <p className="text-slate-600 text-sm mb-4 line-clamp-2">
-                      {caseItem.description}
-                    </p>
-
-                    {/* Metrics */}
-                    <div className="grid grid-cols-3 gap-2 pt-4 border-t border-slate-200">
-                      {caseItem.metrics.map((metric, mIndex) => (
-                        <div key={mIndex} className="text-center">
-                          <div className="text-lg font-bold text-cyan-600">
-                            {metric.value}
-                          </div>
-                          <div className="text-xs text-slate-500">{metric.label}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
-
-        <FadeIn delay={0.4} className="text-center mt-12">
-          <Button size="lg" variant="outline" asChild className="group">
-            <Link href="/cases">
-              查看更多案例
-              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </Button>
+        <FadeIn delay={0.08}>
+          <CaseCard caseItem={cases[1]} />
+        </FadeIn>
+        <FadeIn delay={0.16}>
+          <CaseCard caseItem={cases[2]} />
         </FadeIn>
       </div>
-    </section>
+
+      <FadeIn delay={0.24} className="mt-10">
+        <Button asChild variant="outline" className="home-v2-interactive h-12 rounded-full border-zinc-300 px-6 text-zinc-800 hover:bg-white">
+          <Link href="/cases" className="inline-flex items-center gap-2">
+            查看全部案例
+            <ArrowRight size={16} weight="bold" />
+          </Link>
+        </Button>
+      </FadeIn>
+    </SectionShell>
   );
 }

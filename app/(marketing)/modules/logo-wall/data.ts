@@ -1,16 +1,22 @@
-import { LucideIcon } from "lucide-react";
-import { ShoppingCart, Globe, Sparkles, Package, Target } from "lucide-react";
+import type { Icon } from "@phosphor-icons/react";
+import {
+  ShoppingCartSimple,
+  GlobeHemisphereWest,
+  Sparkle,
+  Package,
+  Target,
+} from "@phosphor-icons/react/dist/ssr";
 
 export interface Platform {
   name: string;
-  icon: LucideIcon;
+  icon: Icon;
 }
 
 export const platforms: Platform[] = [
-  { name: "Amazon", icon: ShoppingCart },
-  { name: "Shopify", icon: Globe },
-  { name: "TikTok Shop", icon: Sparkles },
+  { name: "Amazon", icon: ShoppingCartSimple },
+  { name: "Shopify", icon: GlobeHemisphereWest },
+  { name: "TikTok Shop", icon: Sparkle },
   { name: "eBay", icon: Package },
   { name: "Walmart", icon: Target },
-  { name: "独立站", icon: Globe },
+  { name: "独立站", icon: GlobeHemisphereWest },
 ];

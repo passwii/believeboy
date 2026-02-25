@@ -1,35 +1,30 @@
 import { FadeIn } from "@/components/effects/fade-in";
-import { StatCounter } from "@/components/effects/counter";
+import { MetricItem } from "@/components/sections/home-v2/metric-item";
+import { SectionEyebrow, SectionShell } from "@/components/sections/home-v2/section-shell";
 import { stats } from "./data";
 
 export function StatsSection() {
   return (
-    <section className="py-20 md:py-24 bg-gradient-light">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <FadeIn className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-4">
-            数据证明
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            用实力说话
-          </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            每一个数字背后，都是客户的信任与成功案例
-          </p>
-        </FadeIn>
+    <SectionShell className="bg-zinc-50">
+      <FadeIn className="mb-10 space-y-4 md:mb-12">
+        <SectionEyebrow>Operational Metrics</SectionEyebrow>
+        <h2 className="text-4xl font-semibold tracking-tight text-zinc-900 md:text-5xl">关键指标持续增长，交付效率可被复盘</h2>
+        <p className="max-w-[62ch] text-base leading-relaxed text-zinc-600 md:text-lg">
+          每个数字都对应可追踪的执行动作，用统一指标视图保障策略和结果一致。
+        </p>
+      </FadeIn>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      <div className="overflow-hidden rounded-[var(--home-v2-radius)] border border-zinc-200 bg-white">
+        <div className="grid grid-cols-1 divide-y divide-zinc-200 md:grid-cols-4 md:divide-x md:divide-y-0">
           {stats.map((stat, index) => (
-            <StatCounter
-              key={index}
-              value={stat.value}
-              suffix={stat.suffix}
-              label={stat.label}
-              delay={index * 0.1}
-            />
+            <FadeIn key={stat.label} delay={index * 0.07}>
+              <div className="p-6 md:p-7">
+                <MetricItem value={`${stat.value}${stat.suffix}`} label={stat.label} />
+              </div>
+            </FadeIn>
           ))}
         </div>
       </div>
-    </section>
+    </SectionShell>
   );
 }

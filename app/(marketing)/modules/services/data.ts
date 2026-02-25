@@ -1,8 +1,13 @@
-import { LucideIcon } from "lucide-react";
-import { Search, Package, Palette, Cpu } from "lucide-react";
+import type { Icon } from "@phosphor-icons/react";
+import {
+  MagnifyingGlass,
+  Package,
+  Palette,
+  Cpu,
+} from "@phosphor-icons/react/dist/ssr";
 
 export interface Service {
-  icon: LucideIcon;
+  icon: Icon;
   title: string;
   description: string;
   features: string[];
@@ -10,7 +15,7 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    icon: Search,
+    icon: MagnifyingGlass,
     title: "市场调研与策略",
     description: "深入洞察目标市场的消费趋势、竞争格局与文化特性，为您量身定制高精准度的本地化营销与市场进入策略。",
     features: ["竞品分析", "市场定位", "进入策略"],
