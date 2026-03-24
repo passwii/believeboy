@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, CalendarDots, Phone } from "@phosphor-icons/react/dist/ssr";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/effects/fade-in";
+import { siteConfig } from "@/lib/site-config";
 
 interface CTASectionProps {
   title?: string;
@@ -26,7 +27,7 @@ export function CTASection({
   primaryButtonText = "立即预约咨询",
   primaryButtonHref = "/contact",
   secondaryButtonText = "致电咨询",
-  secondaryButtonHref = "tel:18896968181",
+  secondaryButtonHref = siteConfig.phoneLink,
   variant = "default",
   showSecondary = true,
 }: CTASectionProps) {

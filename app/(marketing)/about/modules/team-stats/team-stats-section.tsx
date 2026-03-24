@@ -1,9 +1,7 @@
 "use client";
 
 import { FadeIn } from "@/components/effects/fade-in";
-import { StatCounter } from "@/components/effects/counter";
 import { Activity, Landmark, Users } from "lucide-react";
-import { teamStats } from "./data";
 
 export function TeamStatsSection() {
   const capabilities = [
@@ -44,18 +42,6 @@ export function TeamStatsSection() {
           </FadeIn>
         </div>
         
-        <div className="mb-14 grid grid-cols-2 gap-8 lg:grid-cols-4 lg:gap-12">
-          {teamStats.map((stat, index) => (
-            <StatCounter
-              key={index}
-              value={stat.value}
-              suffix={stat.suffix}
-              label={stat.label}
-              delay={index * 0.1}
-            />
-          ))}
-        </div>
-
         <FadeIn delay={0.4}>
           <div className="grid gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm md:grid-cols-2">
             <div className="rounded-xl border border-white/10 bg-slate-950/40 p-5">

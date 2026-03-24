@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Mail, MapPin, ExternalLink } from "lucide-react";
+import { siteConfig } from "@/lib/site-config";
 
 // 类型定义 - 提高代码可维护性和类型安全
 interface FooterLink {
@@ -73,6 +74,7 @@ const footerLinks: FooterLinks = {
   company: {
     title: "公司",
     links: [
+      { href: "/limited-offer", label: "限时活动" },
       { href: "/about", label: "关于我们" },
       { href: "/cases", label: "成功案例" },
       { href: "/pricing", label: "定价方案" },
@@ -116,15 +118,15 @@ export function Footer() {
             {/* Contact Info */}
             <div className="space-y-3">
               <a
-                href="mailto:business@believeboy.com"
+                href={`mailto:${siteConfig.email}`}
                 className="flex items-center gap-3 text-slate-300 hover:text-cyan-300 transition-colors group"
               >
                 <Mail className="w-4 h-4" />
-                <span>business@believeboy.com</span>
+                <span>{siteConfig.email}</span>
               </a>
               <div className="flex items-center gap-3 text-slate-300">
                 <MapPin className="w-4 h-4" />
-                <span>苏州市吴江区太湖新城财智汇大厦2303室</span>
+                <span>{siteConfig.fullAddress}</span>
               </div>
             </div>
 

@@ -23,7 +23,7 @@ export function ContactFormSection() {
     company: "",
     phone: "",
     email: "",
-    inquiryType: "",
+    inquiryType: "service",
     message: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -43,9 +43,7 @@ export function ContactFormSection() {
       newErrors.phone = "请输入有效的手机号码";
     }
     
-    if (!formData.email.trim()) {
-      newErrors.email = "请输入电子邮箱";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+    if (formData.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
       newErrors.email = "请输入有效的邮箱地址";
     }
     
@@ -83,7 +81,7 @@ export function ContactFormSection() {
         company: "",
         phone: "",
         email: "",
-        inquiryType: "",
+        inquiryType: "service",
         message: "",
       });
     } catch (error) {
@@ -129,13 +127,13 @@ export function ContactFormSection() {
                       <label className="block text-sm font-medium text-slate-700 mb-2">
                         姓名 <span className="text-red-500">*</span>
                       </label>
-                      <div className="relative">
-                        <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                      <div className={`flex h-12 items-center rounded-md border bg-transparent pl-3 pr-1 shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 ${errors.name ? "border-red-500 focus-within:ring-red-200" : "border-input"}`}>
+                        <User className="mr-3 h-5 w-5 flex-shrink-0 text-slate-400" />
                         <Input
                           placeholder="请输入您的姓名"
                           value={formData.name}
                           onChange={(e) => handleChange("name", e.target.value)}
-                          className={`pl-10 ${errors.name ? "border-red-500 focus-visible:ring-red-200" : ""}`}
+                          className="h-full border-0 bg-transparent px-0 shadow-none focus-visible:ring-0 focus-visible:border-0"
                         />
                       </div>
                       {errors.name && (
@@ -148,13 +146,13 @@ export function ContactFormSection() {
                       <label className="block text-sm font-medium text-slate-700 mb-2">
                         公司名称
                       </label>
-                      <div className="relative">
-                        <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                      <div className="flex h-12 items-center rounded-md border border-input bg-transparent pl-3 pr-1 shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50">
+                        <Building2 className="mr-3 h-5 w-5 flex-shrink-0 text-slate-400" />
                         <Input
                           placeholder="请输入公司名称"
                           value={formData.company}
                           onChange={(e) => handleChange("company", e.target.value)}
-                          className="pl-10"
+                          className="h-full border-0 bg-transparent px-0 shadow-none focus-visible:ring-0 focus-visible:border-0"
                         />
                       </div>
                     </div>
@@ -164,13 +162,13 @@ export function ContactFormSection() {
                       <label className="block text-sm font-medium text-slate-700 mb-2">
                         联系电话 <span className="text-red-500">*</span>
                       </label>
-                      <div className="relative">
-                        <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                      <div className={`flex h-12 items-center rounded-md border bg-transparent pl-3 pr-1 shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 ${errors.phone ? "border-red-500 focus-within:ring-red-200" : "border-input"}`}>
+                        <Phone className="mr-3 h-5 w-5 flex-shrink-0 text-slate-400" />
                         <Input
                           placeholder="请输入联系电话"
                           value={formData.phone}
                           onChange={(e) => handleChange("phone", e.target.value)}
-                          className={`pl-10 ${errors.phone ? "border-red-500 focus-visible:ring-red-200" : ""}`}
+                          className="h-full border-0 bg-transparent px-0 shadow-none focus-visible:ring-0 focus-visible:border-0"
                         />
                       </div>
                       {errors.phone && (
@@ -181,16 +179,16 @@ export function ContactFormSection() {
                     {/* 邮箱 */}
                     <div>
                       <label className="block text-sm font-medium text-slate-700 mb-2">
-                        邮箱 <span className="text-red-500">*</span>
+                        邮箱
                       </label>
-                      <div className="relative">
-                        <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                      <div className={`flex h-12 items-center rounded-md border bg-transparent pl-3 pr-1 shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 ${errors.email ? "border-red-500 focus-within:ring-red-200" : "border-input"}`}>
+                        <Mail className="mr-3 h-5 w-5 flex-shrink-0 text-slate-400" />
                         <Input
                           type="email"
                           placeholder="请输入电子邮箱"
                           value={formData.email}
                           onChange={(e) => handleChange("email", e.target.value)}
-                          className={`pl-10 ${errors.email ? "border-red-500 focus-visible:ring-red-200" : ""}`}
+                          className="h-full border-0 bg-transparent px-0 shadow-none focus-visible:ring-0 focus-visible:border-0"
                         />
                       </div>
                       {errors.email && (
@@ -283,13 +281,13 @@ export function ContactFormSection() {
               {contactInfo.map((item, index) => (
                 <StaggerItem key={index}>
                   <Card className="border-0 shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <CardContent className="p-6 flex items-center gap-4">
-                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center flex-shrink-0`}>
+                    <CardContent className="p-6 flex items-start gap-4">
+                      <div className={`mt-0.5 w-12 h-12 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center flex-shrink-0`}>
                         <item.icon className="w-6 h-6 text-white" />
                       </div>
-                      <div>
-                        <p className="text-sm text-slate-500 mb-1">{item.label}</p>
-                        <p className="text-lg font-semibold text-slate-900">{item.value}</p>
+                      <div className="min-w-0 flex-1 pt-0.5">
+                        <p className="mb-1 text-sm leading-5 text-slate-500">{item.label}</p>
+                        <p className="text-lg font-semibold leading-7 text-slate-900 break-words">{item.value}</p>
                       </div>
                     </CardContent>
                   </Card>

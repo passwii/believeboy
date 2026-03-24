@@ -5,6 +5,7 @@ import {
   Clock,
   type LucideIcon,
 } from "lucide-react";
+import { siteConfig } from "@/lib/site-config";
 
 // 咨询类型选项
 export interface InquiryType {
@@ -32,19 +33,19 @@ export const contactInfo: ContactInfoItem[] = [
   {
     icon: MapPin,
     label: "公司地址",
-    value: "江苏省苏州市工业园区",
+    value: siteConfig.fullAddress,
     color: "from-blue-500 to-cyan-500",
   },
   {
     icon: Mail,
     label: "电子邮箱",
-    value: "contact@believeboy.com",
+    value: siteConfig.email,
     color: "from-cyan-500 to-teal-500",
   },
   {
     icon: Phone,
     label: "联系电话",
-    value: "400-XXX-XXXX",
+    value: siteConfig.phone,
     color: "from-emerald-500 to-green-500",
   },
   {

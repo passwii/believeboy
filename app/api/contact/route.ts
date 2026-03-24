@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { siteConfig } from "@/lib/site-config";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -9,8 +10,8 @@ export async function POST(request: NextRequest) {
     const { name, company, phone, email, inquiryType, message } = body;
 
     const { data, error } = await resend.emails.send({
-      from: "Believeboy 咨询 <contact@believeboy.com>",
-      to: ["yawei@believeboy.com"],
+      from: `Believeboy 咨询 <${siteConfig.email}>`,
+      to: [siteConfig.email],
       subject: `【新咨询】${name} - ${inquiryType || "在线咨询"}`,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">

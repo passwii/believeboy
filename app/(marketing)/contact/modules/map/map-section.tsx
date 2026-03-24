@@ -2,6 +2,7 @@
 
 import { FadeIn } from "@/components/effects/fade-in";
 import { Card, CardContent } from "@/components/ui/card";
+import { siteConfig } from "@/lib/site-config";
 import { MapPin } from "lucide-react";
 
 export function MapSection() {
@@ -48,7 +49,7 @@ export function MapSection() {
                     <MapPin className="w-10 h-10 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-2">彼励扶电子商务（苏州）有限公司</h3>
-                  <p className="text-slate-600 mb-4">江苏省苏州市工业园区</p>
+                  <p className="text-slate-600 mb-4">{siteConfig.fullAddress}</p>
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm">
                     <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                     <span className="text-sm text-slate-600">地图加载中...</span>

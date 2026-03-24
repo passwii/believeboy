@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect, useCallback } from "react";
-import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
+import { Menu, ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { motion, AnimatePresence } from "framer-motion";
+import { siteConfig } from "@/lib/site-config";
 
 // 导航项配置，包含下拉菜单
 const navItems = [
@@ -17,6 +19,17 @@ const navItems = [
       { href: "/#services", label: "服务概览", description: "全方位跨境服务" },
       { href: "/#ai-showcase", label: "AI赋能", description: "智能运营工具" },
       { href: "/#cases", label: "成功案例", description: "真实客户见证" },
+    ],
+  },
+  {
+    href: "/limited-offer",
+    label: "限时活动",
+    badge: "HOT",
+    dropdown: [
+      { href: "/limited-offer", label: "活动总览", description: "品牌出海合伙人专题页" },
+      { href: "/limited-offer#gift-pack", label: "福利礼包", description: "新卖家入门大礼包" },
+      { href: "/limited-offer#campaign-summary", label: "活动摘要", description: "整理后的核心权益" },
+      { href: "/contact", label: "立即咨询", description: "领取福利与活动细则" },
     ],
   },
   {
@@ -40,16 +53,6 @@ const navItems = [
     ],
   },
   {
-    href: "/ai-empowerment",
-    label: "AI 赋能",
-    dropdown: [
-      { href: "/ai-empowerment#vision", label: "AI愿景", description: "AI驱动的电商运营" },
-      { href: "/ai-empowerment#ai-pillars", label: "四大智能支柱", description: "视觉/数据/决策/协同" },
-      { href: "/ai-empowerment#scenarios", label: "实战场景", description: "Listing优化与广告投放" },
-      { href: "/ai-empowerment#pricing", label: "订阅方案", description: "AI-Suite订阅服务" },
-    ],
-  },
-  {
     href: "/pricing",
     label: "服务定价",
     dropdown: [
@@ -57,6 +60,16 @@ const navItems = [
       { href: "/pricing#x-package", label: "跨境合伙人", description: "联合运营品牌出海" },
       { href: "/pricing#ai-suite", label: "AI-套件", description: "智能工具套件" },
       { href: "/pricing#faq", label: "常见问题", description: "价格与服务FAQ" },
+    ],
+  },
+  {
+    href: "/ai-empowerment",
+    label: "AI 赋能",
+    dropdown: [
+      { href: "/ai-empowerment#vision", label: "AI愿景", description: "AI驱动的电商运营" },
+      { href: "/ai-empowerment#ai-pillars", label: "四大智能支柱", description: "视觉/数据/决策/协同" },
+      { href: "/ai-empowerment#scenarios", label: "实战场景", description: "Listing优化与广告投放" },
+      { href: "/ai-empowerment#pricing", label: "订阅方案", description: "AI-Suite订阅服务" },
     ],
   },
   { href: "/about", label: "关于我们" },
@@ -143,6 +156,11 @@ function NavLink({
         }`}
       >
         {item.label}
+        {"badge" in item && item.badge ? (
+          <span className="ml-2 rounded-full bg-red-500 px-2 py-0.5 text-[10px] font-bold tracking-[0.18em] text-white shadow-[0_10px_20px_-10px_rgba(239,68,68,0.9)]">
+            {item.badge}
+          </span>
+        ) : null}
         <span
           className={`absolute bottom-1 left-4 right-4 h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${
             scrolled ? "bg-blue-600" : "bg-cyan-400"
@@ -173,6 +191,11 @@ function NavLink({
         }`}
       >
         {item.label}
+        {"badge" in item && item.badge ? (
+          <span className="ml-2 rounded-full bg-red-500 px-2 py-0.5 text-[10px] font-bold tracking-[0.18em] text-white shadow-[0_10px_20px_-10px_rgba(239,68,68,0.9)]">
+            {item.badge}
+          </span>
+        ) : null}
         <motion.span
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.2 }}
@@ -202,7 +225,7 @@ function NavLink({
             }`}
           >
             <div className="py-2">
-              {item.dropdown?.map((dropdownItem, index) => (
+              {item.dropdown?.map((dropdownItem) => (
                 <motion.div key={dropdownItem.href} variants={menuItemVariants}>
                   <Link
                     href={dropdownItem.href}
@@ -247,6 +270,9 @@ function NavLink({
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const forceSolidNavbar = pathname === "/limited-offer";
+  const isLightNavbar = scrolled || forceSolidNavbar;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -263,7 +289,7 @@ export function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+        isLightNavbar
           ? "bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200/50"
           : "bg-transparent"
       }`}
@@ -278,7 +304,7 @@ export function Navbar() {
           />
           <motion.span
             className={`text-xl md:text-2xl font-bold transition-colors duration-300 ${
-              scrolled ? "text-slate-900" : "text-white"
+              isLightNavbar ? "text-slate-900" : "text-white"
             }`}
             whileHover={{ scale: 1.02 }}
           >
@@ -288,8 +314,8 @@ export function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1">
-          {navItems.map((item, index) => (
-            <NavLink key={item.href} item={item} scrolled={scrolled} />
+          {navItems.map((item) => (
+            <NavLink key={item.href} item={item} scrolled={isLightNavbar} />
           ))}
         </nav>
 
@@ -298,7 +324,7 @@ export function Navbar() {
           <Button
             asChild
             className={`font-medium transition-all duration-300 group ${
-              scrolled
+              isLightNavbar
                 ? "bg-blue-800 hover:bg-blue-700 text-white"
                 : "bg-white text-blue-900 hover:bg-white/90"
             }`}
@@ -316,7 +342,7 @@ export function Navbar() {
             <Button
               variant="ghost"
               size="icon"
-              className={scrolled ? "text-slate-900" : "text-white"}
+              className={isLightNavbar ? "text-slate-900" : "text-white"}
             >
               <Menu className="h-6 w-6" />
               <span className="sr-only">打开菜单</span>
@@ -345,6 +371,11 @@ export function Navbar() {
                         className="flex items-center py-3 px-4 text-lg font-medium text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition-colors"
                       >
                         {item.label}
+                        {"badge" in item && item.badge ? (
+                          <span className="ml-3 rounded-full bg-red-500 px-2 py-0.5 text-[10px] font-bold tracking-[0.18em] text-white">
+                            {item.badge}
+                          </span>
+                        ) : null}
                       </Link>
                       {/* Mobile dropdown items */}
                       {item.dropdown && (
@@ -386,8 +417,9 @@ export function Navbar() {
 
                 {/* Contact Info */}
                 <div className="mt-6 space-y-2 text-sm text-slate-400">
-                  <p>business@believeboy.com</p>
-                  <p>苏州市高新区</p>
+                  <p>{siteConfig.email}</p>
+                  <p>{siteConfig.fullAddress}</p>
+                  <p>{siteConfig.phone}</p>
                 </div>
               </div>
             </div>

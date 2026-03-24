@@ -78,17 +78,17 @@
 
 - **联系方式卡片**:
   1. **公司地址**
-     - 值：江苏省苏州市工业园区
+     - 值：苏州市吴江区太湖新城财智汇大厦23L
      - 图标：MapPin
      - 颜色：蓝色渐变 `from-blue-500 to-cyan-500`
 
   2. **电子邮箱**
-     - 值：contact@believeboy.com
+     - 值：business@believeboy.com
      - 图标：Mail
      - 颜色：青色渐变 `from-cyan-500 to-teal-500`
 
   3. **联系电话**
-     - 值：400-XXX-XXXX
+     - 值：151-5151-4741
      - 图标：Phone
      - 颜色：绿色渐变 `from-emerald-500 to-green-500`
 

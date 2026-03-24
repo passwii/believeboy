@@ -5,10 +5,12 @@ export const siteConfig = {
   description: "专业跨境电商运营 × AI智能驱动",
   url: "https://believeboy.com",
   email: "business@believeboy.com",
-  phone: "400-XXX-XXXX",
+  phone: "151-5151-4741",
+  phoneLink: "tel:15151514741",
+  fullAddress: "苏州市吴江区太湖新城财智汇大厦23L",
   address: {
     city: "苏州市",
-    district: "高新区",
+    district: "吴江区太湖新城",
     province: "江苏省",
   },
   social: {
@@ -18,11 +20,12 @@ export const siteConfig = {
   navigation: {
     main: [
       { href: "/", label: "首页" },
-      { href: "/about", label: "关于我们" },
+      { href: "/limited-offer", label: "限时活动" },
       { href: "/services", label: "服务" },
-      { href: "/ai-empowerment", label: "AI赋能" },
       { href: "/cases", label: "案例" },
       { href: "/pricing", label: "定价" },
+      { href: "/ai-empowerment", label: "AI赋能" },
+      { href: "/about", label: "关于我们" },
     ],
     cta: { href: "/contact", label: "联系我们" },
   },

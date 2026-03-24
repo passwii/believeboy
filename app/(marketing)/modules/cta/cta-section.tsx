@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, CalendarDots, PhoneCall } from "@phosphor-icons/react/dist/ssr";
 import { FadeIn } from "@/components/effects/fade-in";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/lib/site-config";
 
 export function CTASection() {
   return (
@@ -52,9 +53,9 @@ export function CTASection() {
                   asChild
                   className="home-v2-interactive h-12 rounded-full border-stone-500 bg-transparent px-6 text-white hover:bg-white/10"
                 >
-                  <Link href="tel:18896968181" className="inline-flex items-center gap-2">
+                  <Link href={siteConfig.phoneLink} className="inline-flex items-center gap-2">
                     <PhoneCall size={18} weight="duotone" />
-                    致电 188-9696-8181
+                    致电 {siteConfig.phone}
                   </Link>
                 </Button>
               </div>
